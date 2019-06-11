@@ -1,0 +1,28 @@
+
+
+.clear-fix::after {
+    content: "";
+    /* background-color: yellow; */
+    display: table;
+    clear: both;
+}
+.nav-bar {
+    background-color: rgb(253, 237, 5);
+}
+
+.nav-item {
+    list-style: none;
+    display: block;
+    float: right;
+    width: 120px;   
+    padding: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+
+.nav-item.logo {
+    float: left;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
