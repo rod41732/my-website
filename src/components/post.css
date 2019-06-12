@@ -1,0 +1,54 @@
+
+.feed-post {
+    width: 75%;
+    margin: 16px auto;
+    background-color: #ddd;
+    padding: 16px;
+    border-radius: 4px;
+    border: 2px solid #bbb;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.post-img {
+    float: left;
+    padding-right: 15px;
+    width: 180px;
+    height: 180px;
+}
+
+.post-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 1.5em;
+    padding-bottom: 8px;
+}
+
+.post-date {
+    display: inline;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #444;
+}
+
+.post-tag {
+    background-color: #aaa;
+    color: #444;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 4px;
+    font-size: 0.8em;
+    border: 2px solid #666;
+}
+
+.post-text {
+    color: #333;
+}
+
+.post-info {
+    padding-bottom: 12px;
+}
