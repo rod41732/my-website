@@ -14,15 +14,49 @@
     list-style: none;
     display: block;
     float: right;
-    width: 120px;   
-    padding: 16px;
+    width: 80px;   
+    padding: 16px 0;
+    text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 
 .nav-item.logo {
     float: left;
+    padding: 16px ; 
     display: block;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
+
+.nav-button {
+    float: right;
+    display: none;
+    /* font-size: 3em; */
+}
+
+
+@media only screen and (max-width: 440px) {
+    .nav-item:not(.nav-button) {
+        float: none;
+        /* text-align: center; */
+        margin: 0 auto;
+    }
+
+    .nav-button {
+        display: block;
+        float: right;
+    }
+
+    .nav-item.logo {
+        margin: 0 0;
+        display: inline-block;
+    }
+
+
+    .nav-bar:not(.expanded) .nav-item:not(.logo):not(.nav-button) {
+        display: none;
+    }
+}
+
+
