@@ -1,0 +1,13 @@
+.bio-card {
+    padding: 16px;
+    width: 85%;
+    background-color: white;
+    box-shadow: 0px 0px 5px #777;
+    margin: 16px auto;
+}
+
+.bio-body {
+    margin: 8px 32px;
+    font-size: 2em;
+    color: #555;
+}

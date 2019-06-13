@@ -15,15 +15,22 @@
     display: block;
     float: right;
     width: 80px;   
-    padding: 16px 0;
+    padding: 12px 0;
+    font-size: 1.2em;
+    font-weight: bold;
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
+.nav-item:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.7);
+}
 
 .nav-item.logo {
     float: left;
-    padding: 16px ; 
+    width: unset;
+    padding: 12px 16px;
     display: block;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -39,8 +46,15 @@
 @media only screen and (max-width: 440px) {
     .nav-item:not(.nav-button) {
         float: none;
-        /* text-align: center; */
+        text-align: center;
         margin: 0 auto;
+    }
+
+    .nav-item:not(.nav-button):not(.logo) {
+        background-color: #eee;
+        border-bottom: 2px solid #aaa;
+        display: block;
+        width: 100%;
     }
 
     .nav-button {

@@ -1,0 +1,24 @@
+.card {
+    background-color: white;
+    box-shadow: 0px 0px 5px #aaa;
+    padding: 16px;
+    border-radius: 4px;
+    margin: 8px 16px;   
+    width: calc(50% - 64px);
+    display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: calc(100% - 64px);
+    }
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.card-body {
+    color: #333;
+}

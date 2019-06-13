@@ -1,0 +1,23 @@
+.section-card {
+    display: block;
+    width: 90%;
+    background-color: white;
+    margin: 16px auto;
+    padding: 16px;
+}
+
+.section-header {
+    text-align: center;
+}
+
+.section-icon {
+    font-size: 40px;
+}
+.section-title {
+    font-size: 32px;
+}
+
+
+.section-content {
+    margin: 24px 16px 16px 16px;
+}
