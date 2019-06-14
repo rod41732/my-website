@@ -3,7 +3,7 @@ import './post.1.css';
 export function PostInFeed2({tags, title, text, image, date}) {
     return (
         <div className="feed-post ">
-            <div class="image-container clearfix">
+            <div className="image-container clearfix">
                 <img className="post-img" src={image || 'image.jpg'}/>
                 <div className="post-info">
                     {
