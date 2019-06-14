@@ -16,6 +16,47 @@
     clear: both;
 }
 
+.profile-line {
+    white-space: nowrap;
+}
+
+.profile-line.name {
+    font-weight: bold;
+    /* font-size: 1.2em; */
+}
+
+.profile {
+    color: white;
+    font-size: 1.2em;
+    position: absolute;
+    top: 176px;
+    display: block;
+    text-align: center;
+    overflow: visible;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profile-links {
+    display: flex;
+    position: absolute;
+    top: 224px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* override post tag style */
+.profile-links > * {
+    margin: 8px 8px;
+    color: white;
+    /* display: inline-block; */
+    width: 64px;
+    text-align: center;
+}
+
+
+
+
 .avatar-img {
     position: absolute;
     width: 128px;
