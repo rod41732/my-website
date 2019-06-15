@@ -2,7 +2,6 @@ import React from 'react';
 import Section from './components/section';
 import Timeline from '../home/components/timeline'
 import Cover from './components/cover';
-import Bio from './components/bio';
 import Card from './components/card';
 const items = [
     {
@@ -40,8 +39,6 @@ const items = [
 export default function AboutMe() {
     return (<div>
         <Cover/>
-        <Bio/>
-
         <Section
             child={
                 <div>
@@ -58,6 +55,7 @@ export default function AboutMe() {
                 <div style={{
                     display: "block",
                 }}>
+                    {/* TODO: Use another component to remove shadow */}
                     <Card
                         title="Card title lorem ipsum dolor sit amet"
                         body="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero"
