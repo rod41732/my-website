@@ -10,7 +10,7 @@ export default function Cover() {
             <img className="avatar-img" src="doge.png"/>
             <div className="profile">
                 <div className="profile-line name">Rodchananat K.</div>
-                <div className="profile-line">Labore sunt eiusmod nisi duis.</div>
+                <div className="profile-line">Such developer much wow</div>
             </div>
             <div className="profile-links">
                 <span className="post-tag">link 1</span>
