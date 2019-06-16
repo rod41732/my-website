@@ -78,6 +78,7 @@ SEO.defaultProps = {
   description: ``,
 }
 
+
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,

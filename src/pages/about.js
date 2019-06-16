@@ -3,6 +3,9 @@ import Section from '../components/section';
 import Cover from '../components/cover';
 import Card from '../components/card';
 import Layout from '../components/layout';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faCogs, faInfo, faTrophy, faAward} from '@fortawesome/free-solid-svg-icons';
+import Timeline from '../components/timeline';
 const items = [
     {
     title: "Project 1",
@@ -55,12 +58,12 @@ function AboutMe() {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero neque quos nisi ipsum corrupti animi debitis! Odit velit, autem numquam accusamus, corrupti id tempore iusto optio a sint laudantium quam!
                 </div>
             }
-            title="Projects"
-            icon="🐹 "
+            title="About myself"
+            icon={<FontAwesomeIcon icon={faInfo}/>}
         />
         <Section
-            icon="🐹"
-            title="Show case"
+            icon={<FontAwesomeIcon icon={faCogs}/>}
+            title="My Projects"
             child={
                 <div style={{
                     display: "block",
@@ -93,11 +96,13 @@ function AboutMe() {
                 </div>
             }
         />
-        {/* 
-        <Project/>
-        <Competetions/>
-        <Skill/>
-        <Experience/> */}
+        <Section fullwidth
+            icon={<FontAwesomeIcon icon={faTrophy}/>}
+            title="Competition"
+            child={
+                <Timeline items={items}/>
+            }
+        />
     </div>
     )
 }
