@@ -1,16 +1,21 @@
 .card {
     background-color: white;
-    box-shadow: 0px 1px 4px #aaa;
-    padding: 16px;
-    border-radius: 4px;
-    margin: 8px 8px;   
-    width: calc(100% - 48px);
+    width: calc(100% - 64px);
     display: inline-block;
+    padding: 24px;
+}
+
+.card:not(:last-child) {
+    border-bottom: 1px solid #ddd;
 }
 
 @media only screen and (min-width: 768px) {
     .card {
         width: calc(50% - 48px);
+        border-radius: 4px;
+        margin: 8px 8px;
+        padding: 16px;
+        box-shadow: 0px 0px 3px #ccc;   
     }
 }
 

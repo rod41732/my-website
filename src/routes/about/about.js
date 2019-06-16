@@ -37,7 +37,9 @@ const items = [
 }];
 
 export default function AboutMe() {
-    return (<div>
+    return (<div style={{
+        paddingTop: '46px',
+    }}>
         <Cover/>
         <Section
             child={

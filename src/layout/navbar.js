@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Link, Router} from 'react-router-dom';
 import './navbar.css'
 
 export default function Navbar() {
@@ -14,13 +15,11 @@ export default function Navbar() {
             navClass.add("expanded");
           }
         }}> = </div>
-        <div className="nav-item">Etc</div>
-        <div className="nav-item">Home</div>
-        <div className="nav-item">Math</div>
-        <div className="nav-item">Dev</div>
+        <div className="nav-item"><Link to="/about">About</Link></div>
+        <div className="nav-item"><Link to="/home">Home</Link></div>
+        <div className="nav-item"><Link to="/math">Math</Link></div>
+        <div className="nav-item"><Link to="/dev">Dev</Link></div>
       </div>
     </div>
   );
-
-
 }

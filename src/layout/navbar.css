@@ -7,10 +7,14 @@
     clear: both;
 }
 .nav-bar {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
     background-color: rgb(253, 237, 5);
 }
 
 .nav-item {
+    color: black;
     list-style: none;
     display: block;
     float: right;
