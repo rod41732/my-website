@@ -1,21 +1,53 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import {PostInFeed2} from '../components/post';
+import Header from '../components/header';
+import PageNav from '../components/pagenav';
+import Layout from '../components/layout';
+import Image from '../components/image';
+const defaultDate = new Date();
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+export default () => {
+    return (
+        <Layout>
+            <Home timeline={[]}/>
+        </Layout>
+    )
+}
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+function Home({ timeline }) {
+    return (
+        <div style={{
+            paddingTop: '46px', 
+        }}>        
+            {/* <Image/> */}
+            <Header/>
+            <PostInFeed2 
+                date={defaultDate} 
+                description="Lorem descrpition" 
+                title="lorem title" 
+                tags={['JS', 'CSS', 'HTML']}
+            />
+            <PostInFeed2 
+                date={defaultDate}
+                description="Lorem descriptiomn"
+                title="Lorem title"
+                tags={['Java', 'Android', 'App']}
+            />
+            <PostInFeed2 
+                date={defaultDate} 
+                description="Lorem descrpition" 
+                title="lorem title" 
+                tags={['JS', 'CSS', 'HTML']}
+            />
+            <PostInFeed2 
+                date={defaultDate}
+                description="Lorem descriptiomn"
+                title="Lorem title"
+                tags={['Java', 'Android', 'App']}
+            />
+            <PageNav maxPage={5} currentPage={1}/>
+            {/* <Footer/> */}
+        </div>
+    )
+}
 
-export default IndexPage
