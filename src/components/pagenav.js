@@ -10,7 +10,7 @@ export default function PageNav({currentPage, maxPage}) {
                 (() => {
                     return [
                         pageNavButton("<", false),
-                        ...(_.range(maxPage).map((num) => pageNavButton(num, num === currentPage))),
+                        ...(_.range(maxPage).map((num) => pageNavButton(num+1, num+1 === currentPage))),
                         pageNavButton(">", false) ,
                     ]
                 }) ()
