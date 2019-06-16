@@ -1,8 +1,8 @@
 import React from 'react';
-import Section from './components/section';
-import Timeline from '../home/components/timeline'
-import Cover from './components/cover';
-import Card from './components/card';
+import Section from '../components/section';
+import Cover from '../components/cover';
+import Card from '../components/card';
+import Layout from '../components/layout';
 const items = [
     {
     title: "Project 1",
@@ -36,7 +36,15 @@ const items = [
     body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.",
 }];
 
-export default function AboutMe() {
+export default () => {
+    return (
+        <Layout>
+            <AboutMe/>
+        </Layout>
+    );
+}
+
+function AboutMe() {
     return (<div style={{
         paddingTop: '46px',
     }}>

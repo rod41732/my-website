@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Link, Router} from 'react-router-dom';
+import {Link} from 'gatsby';
 import './navbar.css'
 
 export default function Navbar() {
@@ -15,10 +15,10 @@ export default function Navbar() {
             navClass.add("expanded");
           }
         }}> = </div>
-        <div className="nav-item"><Link to="/about">About</Link></div>
-        <div className="nav-item"><Link to="/home">Home</Link></div>
-        <div className="nav-item"><Link to="/math">Math</Link></div>
-        <div className="nav-item"><Link to="/dev">Dev</Link></div>
+        <Link to="/about"><div className="nav-item">About</div></Link>
+        <Link to="/home"><div className="nav-item">Home</div></Link>
+        <Link to="/math"><div className="nav-item">Math</div></Link>
+        <Link to="/dev"><div className="nav-item">Dev</div></Link>
       </div>
     </div>
   );

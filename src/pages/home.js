@@ -1,16 +1,23 @@
-import Timeline from './components/timeline';
 import React from 'react';
-import {PostInFeed} from '../../components/post';
-import {PostInFeed2} from '../../components/post.1';
-import Header from './components/header';
-import PageNav from './components/pagenav';
+import {PostInFeed2} from '../components/post';
+import Header from '../components/header';
+import PageNav from '../components/pagenav';
+import Layout from '../components/layout';
 
 const defaultDate = new Date();
 
-export default function Home({ timeline }) {
+export default () => {
+    return (
+        <Layout>
+            <Home timeline={[]}/>
+        </Layout>
+    )
+}
+
+function Home({ timeline }) {
     return (
         <div style={{
-            paddingTop: '46px',
+            paddingTop: '46px', 
         }}>        
             <Header/>
             <PostInFeed2 
