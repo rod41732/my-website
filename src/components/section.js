@@ -9,7 +9,7 @@ export default function Section({child, title, icon, fullwidth}) {
         }>
             <div className="section-header">
                 <div className="section-icon">{icon}</div>
-                <div className="section-title">{title}</div>
+                <div className="section-title title-font">{title}</div>
             </div>
             <div className="section-content">
                 {

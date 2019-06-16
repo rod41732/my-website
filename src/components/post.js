@@ -8,16 +8,16 @@ export function PostInFeed2({tags, title, text, image, date}) {
                 <div className="post-info">
                     {
                         // TODO: format date
-                        <div className="post-date">{date.toDateString()}</div>
+                        <div className="post-date secondary-font">{date.toDateString()}</div>
                     }
-                        <div className="tag-container">
+                        <div className="tag-container secondary-font">
                             {
                                 (tags || ['general']).map(tagName => 
                                     <span className="post-tag">{tagName}</span>
                                 )
                             }
                         </div> 
-                    <div className="post-title">{title}</div>
+                    <div className="post-title title-font">{title}</div>
                 </div>
             </div>
             <p className="post-text">

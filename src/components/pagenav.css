@@ -5,7 +5,6 @@
 
 .page-nav-button {
     font-size: 1.2em;
-    font-family: 'Kanit', sans-serif;
     display: inline-block;
     padding: 8px 16px;
     vertical-align: middle;
@@ -17,4 +16,12 @@
 
 .page-nav-button:last-child {
     border-right-width: 2px;
+}
+
+.page-nav-button:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.page-nav-button:last-child {
+    border-radius: 0 4px 4px 0;
 }

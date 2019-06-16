@@ -1,0 +1,30 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+
+.title-font ,.title-font * {
+    font-family: 'Kanit', sans-serif;
+}
+
+.secondary-font, .secondary-font * {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: light;
+}
+
+.accent-font, .accent-font * {
+    font-family: "Kanit", sans-serif;
+}
+
+body {
+    background-color: #eee;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}

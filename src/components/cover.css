@@ -9,20 +9,15 @@
     /* position: absolute; */
 }
 
-
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 .profile-line {
     white-space: nowrap;
+    font-weight: lighter;
+    opacity: 0.8;
 }
 
 .profile-line.name {
     font-weight: bold;
-    /* font-size: 1.2em; */
+    font-size: 1.2em;
 }
 
 .profile {
@@ -40,7 +35,7 @@
 .profile-links {
     display: flex;
     position: absolute;
-    top: 224px;
+    top: 240px;
     left: 50%;
     transform: translateX(-50%);
 }

@@ -3,18 +3,17 @@
 .timeline {
     white-space: nowrap;
     overflow-x: scroll;
-    background-color: #aaa;
 }
 
 .timeline ul {
     width: 100vw;
     padding: 250px 0;
     display: inline-block;
+    background-color: #c7c7c7;
 }
 
 .message-title {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2em;
+    font-size: 1.75em;
     font-weight: 600;
     padding: 8px;
     color: #111;   
@@ -22,9 +21,8 @@
 
 
 .message-time {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5em;
-
+    font-size: 1em;
+    color: #555;
 }
 
 .message-body {

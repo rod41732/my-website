@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Timeline({items}) {
     return (
-    <div className="timeline">
+    <div className="timeline clearfix">
         <ul>
             {
                 items.map((data) => TimelineBubble(data))
@@ -18,7 +18,8 @@ function TimelineBubble({title, body}) {
     <li className="message-container">
         <div className="message-box">
             <div className="bubble">
-                <span className="message-time"> 2019 </span><span className="message-title">{title}</span>
+                <span className="message-time secondary-font"> 2019 </span>
+                <span className="message-title title-font">{title}</span>
                 <p className="message-body">{body}</p>
             </div>
         </div>

@@ -9,12 +9,6 @@
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-}
 .image-container {
     position: relative;
     color: white;
@@ -34,7 +28,6 @@
 }
 
 .post-title {
-    font-family: 'Kanit', sans-serif;
     font-weight: 400;
     font-size: 2.5em;
     padding-bottom: 8px;
@@ -42,7 +35,6 @@
 
 .post-date {
     display: block;
-    font-family: 'Kanit', sans-serif;
     font-weight: bold;
     margin: 8px 0;
     color: rgba(255, 255, 255, 0.75);
@@ -54,7 +46,6 @@
 }
 
 .post-tag {
-    font-family: Arial, Helvetica, sans-serif;
     background-color: transparent;
     color: white;
     padding: 4px 8px;
