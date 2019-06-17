@@ -4,12 +4,11 @@ import './cover.css'
 export default function Cover() {
     return (
         <div className="cover clearfix">
-            <img className="cover-img" style={{
+            <img className="cover-img" alt="" style={{
                 backgroundImage: `url(${"image.jpg"})`
             }}
-                alt="Cover picture"
             />
-            <img className="avatar-img" src="doge.png" alt="Profile picture"/>
+            <img className="avatar-img" src="doge.png" alt="Profile"/>
             <div className="profile">
                 <div className="profile-line name">Rodchananat K.</div>
                 <div className="profile-line">Such developer much wow</div>
