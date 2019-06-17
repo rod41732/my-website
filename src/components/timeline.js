@@ -6,9 +6,9 @@ export default function Timeline({items}) {
     <div className="timeline clearfix">
         <ul>
             {
-                items.map((data) => TimelineBubble(data))
+                items.map((data, index) => <TimelineBubble body={data.body} title={data.title} key={index}/>)
             }
-            <li></li> {/* extra <li> for line that past end node*/}
+            <li key={items.length}></li> {/* extra <li> for line that past end node*/}
         </ul>
     </div>)
 } 

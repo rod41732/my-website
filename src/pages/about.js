@@ -68,7 +68,7 @@ function AboutMe() {
                 }}>
                 {
                     _.range(5).map((idx) => 
-                        <Card title={"lorem ipsum title"}
+                        <Card key={idx} title={"lorem ipsum title"}
                             body="Culpa veniam sunt aliquip voluptate reprehenderit 
                             incididunt occaecat anim. Laborum tempor sit elit irure 
                             aute sunt in Lorem eu ut voluptate. Reprehenderit quis

@@ -1,19 +1,22 @@
 import React from 'react';
 import './post.css';
-export function PostInFeed2({tags, title, text, image, date}) {
+import {Link} from 'gatsby';
+
+
+export default ({tags, title, text, image, date, link}) => {
     return (
         <div className="feed-post">
             <div className="image-container clearfix">
-                <img alt={title} className="post-img" src={image || 'image.jpg'}/>
+                <Link to={link}><img alt={title} className="post-img" src={image || 'image.jpg'}/></Link>
                 <div className="post-info">
                     {
                         // TODO: format date
-                        <div className="post-date secondary-font">{date.toDateString()}</div>
+                        <div className="post-date secondary-font">{date}</div>
                     }
                         <div className="tag-container secondary-font">
                             {
                                 (tags || ['general']).map(tagName => 
-                                    <span className="post-tag">{tagName}</span>
+                                    <span key={tagName} className="post-tag">{tagName}</span>
                                 )
                             }
                         </div> 

@@ -3,7 +3,7 @@ import "./pagenav.css"
 import _ from 'lodash';
 
 export default function PageNav({currentPage, maxPage}) {
-    console.log("Page nav is with ", currentPage, "Pages")
+    console.log("Page nav is with ", maxPage, "Pages")
     return (
         <div className="page-nav">
             {
@@ -21,5 +21,5 @@ export default function PageNav({currentPage, maxPage}) {
 }
 
 function pageNavButton(content, active) {
-    return <div className={`page-nav-button ${active ? "active" : ""}`}>{content}</div>;
+    return <div key={content} className={`page-nav-button ${active ? "active" : ""}`}>{content}</div>;
 }
