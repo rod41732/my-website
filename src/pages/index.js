@@ -1,50 +1,49 @@
 import React from 'react';
-import {PostInFeed2} from '../components/post';
+import Post from '../components/post';
 import Header from '../components/header';
 import PageNav from '../components/pagenav';
 import Layout from '../components/layout';
-const defaultDate = new Date();
 
-export default () => {
+export default ({data}) => {
+    console.log(data);
     return (
         <Layout>
-            <Home timeline={[]}/>
+            <Header title="Rod41732's blog" subtitle="beautiful stories, wow"/>
+            {
+                data.allMarkdownRemark.edges.map(({node}, index) => (
+                    <Post
+                        key={index}
+                        title={node.frontmatter.title}
+                        date={node.frontmatter.date}
+                        image="image.jpg"
+                        tags={null}
+                        text={node.excerpt}
+                        link={`/blog/${node.fields.slug}`}
+                    />
+                ))
+            }
+            <PageNav maxPage={Math.ceil(data.allMarkdownRemark.totalCount/5)} currentPage={1}/>
         </Layout>
     )
 }
 
-function Home({ timeline }) {
-    return (
-        <div>        
-            {/* <Image/> */}
-            <Header title="All my blogs" subtitle="so many stories, wow"/>
-            <PostInFeed2 
-                date={defaultDate} 
-                description="Lorem descrpition" 
-                title="lorem title" 
-                tags={['JS', 'CSS', 'HTML']}
-            />
-            <PostInFeed2 
-                date={defaultDate}
-                description="Lorem descriptiomn"
-                title="Lorem title"
-                tags={['Java', 'Android', 'App']}
-            />
-            <PostInFeed2 
-                date={defaultDate} 
-                description="Lorem descrpition" 
-                title="lorem title" 
-                tags={['JS', 'CSS', 'HTML']}
-            />
-            <PostInFeed2 
-                date={defaultDate}
-                description="Lorem descriptiomn"
-                title="Lorem title"
-                tags={['Java', 'Android', 'App']}
-            />
-            <PageNav maxPage={5} currentPage={1}/>
-            {/* <Footer/> */}
-        </div>
-    )
-}
-
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+          excerpt
+          fields {
+              slug
+          }
+        }
+      }
+    }
+  }
+`
