@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './section.css';
 
-export default function Section({child, title, icon, fullwidth}) {
+export default function Section({children, title, icon, fullwidth}) {
     return (
         <div className={
             `section-card ${fullwidth ? "full-width":""}`
@@ -13,7 +13,7 @@ export default function Section({child, title, icon, fullwidth}) {
             </div>
             <div className="section-content">
                 {
-                    child
+                    children
                 }
             </div>
         </div>

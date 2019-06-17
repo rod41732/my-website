@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './navbar';
 import {Helmet} from 'react-helmet';
-import {useStaticQuery, Link, grpahql, graphql} from 'gatsby';
+import {useStaticQuery, graphql} from 'gatsby';
 export default function Layout({children}) {
     const data = useStaticQuery(
         graphql`
@@ -25,7 +25,11 @@ export default function Layout({children}) {
                 paddingBottom: "32px",
             }}>
                 <Navbar/>
-                {children}
+                <div style={{
+                    paddingTop: "58px",
+                }}>
+                    {children}
+                </div> 
             </div>
         </>
     )

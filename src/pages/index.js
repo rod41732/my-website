@@ -3,7 +3,6 @@ import {PostInFeed2} from '../components/post';
 import Header from '../components/header';
 import PageNav from '../components/pagenav';
 import Layout from '../components/layout';
-import Image from '../components/image';
 const defaultDate = new Date();
 
 export default () => {
@@ -16,11 +15,9 @@ export default () => {
 
 function Home({ timeline }) {
     return (
-        <div style={{
-            paddingTop: '46px', 
-        }}>        
+        <div>        
             {/* <Image/> */}
-            <Header/>
+            <Header title="All my blogs" subtitle="so many stories, wow"/>
             <PostInFeed2 
                 date={defaultDate} 
                 description="Lorem descrpition" 

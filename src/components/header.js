@@ -2,7 +2,7 @@ import React from 'react';
 import './header.css';
 import {useStaticQuery, graphql} from 'gatsby';
 
-export default function Header({catergoryName}) {
+export default function Header({title, subtitle}) {
     const data = useStaticQuery(
         graphql`
             query {
@@ -16,8 +16,8 @@ export default function Header({catergoryName}) {
     );
     return (
         <div className="header title-font">
-            <h1 className="title"> {data.site.siteMetadata.title} : {catergoryName || 'All'}</h1>
-            <div className="sub-title"> many blog such story much wow lorem ipsum</div>
+            <h1 className="title"> {title || "No title, so sad"}</h1>
+            <div className="sub-title"> {subtitle || "such empty subtitle, much update needed"}</div>
         </div>
     )
 }
