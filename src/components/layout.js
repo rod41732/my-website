@@ -25,11 +25,7 @@ export default function Layout({children}) {
                 paddingBottom: "32px",
             }}>
                 <Navbar/>
-                <div style={{
-                    paddingTop: "58px",
-                }}>
-                    {children}
-                </div> 
+                {children}
             </div>
         </>
     )

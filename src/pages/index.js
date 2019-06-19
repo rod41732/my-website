@@ -8,6 +8,9 @@ export default ({data}) => {
     console.log(data);
     return (
         <Layout>
+          <div style={{
+            paddingTop: "58px",
+          }}>
             <Header title="Rod41732's blog" subtitle="beautiful stories, wow"/>
             {
                 data.allMarkdownRemark.edges.map(({node}, index) => (
@@ -23,6 +26,7 @@ export default ({data}) => {
                 ))
             }
             <PageNav maxPage={Math.ceil(data.allMarkdownRemark.totalCount/5)} currentPage={1}/>
+          </div>
         </Layout>
     )
 }

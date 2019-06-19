@@ -1,6 +1,7 @@
 import React from 'react';
 import "./pagenav.css"
 import _ from 'lodash';
+import {Link} from 'gatsby';
 
 export default function PageNav({currentPage, maxPage}) {
     console.log("Page nav is with ", maxPage, "Pages")
@@ -20,6 +21,7 @@ export default function PageNav({currentPage, maxPage}) {
     )
 }
 
-function pageNavButton(content, active) {
-    return <div key={content} className={`page-nav-button ${active ? "active" : ""}`}>{content}</div>;
+// TODO: fix this shitty implementation of link
+function pageNavButton(content, active) {    
+    return <Link key={content} to={`/blog/page/${content}`} ><div className={`page-nav-button ${active ? "active" : ""}`}>{content}</div></Link>;
 }

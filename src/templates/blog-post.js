@@ -9,12 +9,16 @@ export default ({data}) => {
   console.log(post);
   return (
     <Layout>
+      <div style={{
+        paddingTop: "58px",
+      }}>
         <Header title={post.frontmatter.title}></Header>
         <Section>
           <div dangerouslySetInnerHTML={{
             __html: post.html,
           }}/>
         </Section>
+      </div>
     </Layout>
   );
 }
