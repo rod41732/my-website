@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
     title: `Rod41732's Blog `,
@@ -32,7 +34,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src/`,
+        path: path.join(__dirname, "src"),
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

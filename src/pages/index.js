@@ -13,39 +13,39 @@ export default ({data}) => {
           }}>
             <Header title="Rod41732's blog" subtitle="beautiful stories, wow"/>
             {
-                data.allMarkdownRemark.edges.map(({node}, index) => (
-                    <Post
-                        key={index}
-                        title={node.frontmatter.title}
-                        date={node.frontmatter.date}
-                        image="image.jpg"
-                        tags={null}
-                        text={node.excerpt}
-                        link={`/blog/${node.fields.slug}`}
-                    />
-                ))
+                  data.allMarkdownRemark.nodes.slice(0, 5).map((post, index) => (
+                      <Post
+                          key={index}
+                          title={post.frontmatter.title}
+                          date={post.frontmatter.date}
+                          image={post.frontmatter.image}
+                          tags={null}
+                          text={post.excerpt}
+                          link={`/blog/${post.fields.slug}`}
+                      />
+                  ))
             }
-            <PageNav maxPage={Math.ceil(data.allMarkdownRemark.totalCount/5)} currentPage={1}/>
+            <PageNav maxPage={Math.ceil(data.allMarkdownRemark.nodes.length/5)} currentPage={1}/>
           </div>
         </Layout>
     )
 }
 
+
 export const query = graphql`
   query {
-    allMarkdownRemark {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
-          excerpt
-          fields {
-              slug
-          }
+    allMarkdownRemark(sort: {fields: [frontmatter___title], order: [DESC]}, skip: 0) {
+      nodes {
+        id
+        fileAbsolutePath
+        frontmatter{
+          title
+          date
+          image
+        }
+        excerpt
+        fields{
+          slug
         }
       }
     }

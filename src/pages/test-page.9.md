@@ -1,5 +1,5 @@
 ---
-title: "0. Sweet Pandas Eating Sweets"
+title: "9. Sweet Pandas Eating Sweets"
 date: "2017-08-10"
 image: "/image.jpg"
 ---
