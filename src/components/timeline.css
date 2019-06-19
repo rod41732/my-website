@@ -3,13 +3,13 @@
 .timeline {
     white-space: nowrap;
     overflow-x: scroll;
+    background-color: #c7c7c7;
 }
 
 .timeline ul {
     width: 100vw;
     padding: 250px 0;
     display: inline-block;
-    background-color: #c7c7c7;
 }
 
 .message-title {

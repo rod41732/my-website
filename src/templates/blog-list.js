@@ -9,6 +9,9 @@ export default ({data , pageContext}) => {
   console.log(posts);
   return (
     <Layout>
+      <div style={{
+        paddingTop: "58px",
+      }}>
         <Header title={`Blogs page ${pageContext.currentPage}`}></Header>
         {
           posts.map((post) => {
@@ -25,6 +28,7 @@ export default ({data , pageContext}) => {
           })
         }
         <Pagenav currentPage={pageContext.currentPage} numOfPages={pageContext.numOfPages}/>
+      </div>
     </Layout>
   );
 }

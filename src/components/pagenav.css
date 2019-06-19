@@ -14,14 +14,14 @@
     border-color: #777;
 }
 
-.page-nav-button:last-child {
+.page-nav a:last-child .page-nav-button {
     border-right-width: 2px;
 }
 
-.page-nav-button:first-child {
+.page-nav a:first-child .page-nav-button {
     border-radius: 4px 0 0 4px;
 }
 
-.page-nav-button:last-child {
+.page-nav a:last-child .page-nav-button{
     border-radius: 0 4px 4px 0;
 }
