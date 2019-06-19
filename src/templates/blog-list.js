@@ -3,12 +3,13 @@ import Layout from '../components/layout';
 import Header from '../components/header';
 import Post from '../components/post';
 import {graphql} from 'gatsby';
-export default ({data}) => {
+import Pagenav from '../components/pagenav';
+export default ({data , pageContext}) => {
   const posts = data.allMarkdownRemark.nodes;
   console.log(posts);
   return (
     <Layout>
-        <Header title={`Blogs page `}></Header>
+        <Header title={`Blogs page ${pageContext.currentPage}`}></Header>
         {
           posts.map((post) => {
             console.log(post.frontmatter.image)
@@ -23,6 +24,7 @@ export default ({data}) => {
             />
           })
         }
+        <Pagenav currentPage={pageContext.currentPage} numOfPages={pageContext.numOfPages}/>
     </Layout>
   );
 }

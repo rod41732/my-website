@@ -26,12 +26,15 @@ exports.createPages = ({ graphql, actions }) => {
   }`).then(({data}) => {
     console.log(`================= there're ${data.allMarkdownRemark.nodes.length} markdowns!`)
     const numOfmarkdown = data.allMarkdownRemark.nodes.length;
-    for (let i=1; i<=Math.ceil(numOfmarkdown/5); i++){
+    const numOfPages = Math.ceil(numOfmarkdown/5);
+    for (let i=1; i<=numOfPages; i++){
       createPage({
         path: "blog/page/" + i,
         component : path.resolve("./src/templates/blog-list.js"),
         context: {
           skip: (i-1)*5,
+          currentPage: i,
+          numOfPages: numOfPages,
         },
       })
     }

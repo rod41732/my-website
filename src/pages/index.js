@@ -25,7 +25,7 @@ export default ({data}) => {
                       />
                   ))
             }
-            <PageNav maxPage={Math.ceil(data.allMarkdownRemark.nodes.length/5)} currentPage={1}/>
+            <PageNav numOfPages={Math.ceil(data.allMarkdownRemark.nodes.length/5)} currentPage={1}/>
           </div>
         </Layout>
     )

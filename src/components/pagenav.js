@@ -3,15 +3,15 @@ import "./pagenav.css"
 import _ from 'lodash';
 import {Link} from 'gatsby';
 
-export default function PageNav({currentPage, maxPage}) {
-    console.log("Page nav is with ", maxPage, "Pages")
+export default function PageNav({currentPage, numOfPages}) {
+    console.log("Page nav is with ", numOfPages, "Pages")
     return (
         <div className="page-nav">
             {
                 (() => {
                     return [
                         pageNavButton("<", false),
-                        ...(_.range(maxPage).map((num) => pageNavButton(num+1, num+1 === currentPage))),
+                        ...(_.range(numOfPages).map((num) => pageNavButton(num+1, num+1 === currentPage))),
                         pageNavButton(">", false) ,
                     ]
                 }) ()
