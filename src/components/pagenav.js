@@ -10,9 +10,9 @@ export default function PageNav({currentPage, numOfPages}) {
             {
                 (() => {
                     return [
-                        pageNavButton("<", false),
-                        ...(_.range(numOfPages).map((num) => pageNavButton(num+1, num+1 === currentPage))),
-                        pageNavButton(">", false) ,
+                        pageNavButton("<", false, currentPage - 1 > 0 ? currentPage - 1 : -1),
+                        ...(_.range(numOfPages).map((num) => pageNavButton(num+1, num+1 === currentPage, num+1))),
+                        pageNavButton(">", false, currentPage + 1 <= numOfPages ? currentPage + 1 : -1) ,
                     ]
                 }) ()
                 
@@ -21,7 +21,9 @@ export default function PageNav({currentPage, numOfPages}) {
     )
 }
 
-// TODO: fix this shitty implementation of link
-function pageNavButton(content, active) {    
-    return <Link key={content} to={`/blog/page/${content}`} ><div className={`page-nav-button ${active ? "active" : ""}`}>{content}</div></Link>;
+function pageNavButton(content, active, toPage) {
+    const child = <div className={`page-nav-button ${active ? "active" : ""}`}>{content}</div>;
+    if (toPage !== -1) 
+        return <Link to={`blog/page/${toPage}`} key={content}>{child}</Link>
+    return null;
 }
