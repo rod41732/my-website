@@ -16,8 +16,8 @@ export default ({tags, title, text, image, date, link}) => {
                         }
                             <div className="tag-container secondary-font">
                                 {
-                                    (tags || ['general']).map(tagName => 
-                                        <span key={tagName} className="post-tag">{tagName}</span>
+                                    tags.map((tagName)  => 
+                                        <Link to={`/list/tag/${tagName}`}><span key={tagName} className="post-tag">{tagName}</span></Link>
                                     )
                                 }
                             </div> 
