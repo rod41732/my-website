@@ -3,6 +3,7 @@ import Post from '../components/post';
 import Header from '../components/header';
 import PageNav from '../components/pagenav';
 import Layout from '../components/layout';
+import {graphql} from 'gatsby';
 
 export default ({data}) => {
     console.log(data);
