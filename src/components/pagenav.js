@@ -24,6 +24,6 @@ export default function PageNav({currentPage, numOfPages}) {
 function pageNavButton(content, active, toPage) {
     const child = <div className={`page-nav-button ${active ? "active" : ""}`}>{content}</div>;
     if (toPage !== -1) 
-        return <Link to={`blog/page/${toPage}`} key={content}>{child}</Link>
+        return <Link to={`list/all/${toPage}`} key={content}>{child}</Link>
     return null;
 }

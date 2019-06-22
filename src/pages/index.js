@@ -22,7 +22,7 @@ export default ({data}) => {
                           image={post.frontmatter.image}
                           tags={post.frontmatter.tags}
                           text={post.excerpt}
-                          link={`/blog/${post.fields.slug}`}
+                          link={`/article/${post.fields.slug}`}
                       />
                   ))
             }
