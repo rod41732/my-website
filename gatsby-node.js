@@ -60,5 +60,14 @@ exports.createPages = ({ graphql, actions }) => {
       })  
     })
     console.log("All tags are ", allTags);
+    allTags.forEach((tag) => {
+      createPage({
+          path: `/blog/tag/${tag}`,
+          component: path.resolve("./src/templates/blog-list-by-tag.js"),
+          context: {
+            tag: tag,
+          }
+      })
+    })
   })
 }
