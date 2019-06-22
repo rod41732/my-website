@@ -20,7 +20,7 @@ export default ({data}) => {
                           title={post.frontmatter.title}
                           date={post.frontmatter.date}
                           image={post.frontmatter.image}
-                          tags={null}
+                          tags={post.frontmatter.tags}
                           text={post.excerpt}
                           link={`/blog/${post.fields.slug}`}
                       />
@@ -43,6 +43,7 @@ export const query = graphql`
           title
           date
           image
+          tags
         }
         excerpt
         fields{

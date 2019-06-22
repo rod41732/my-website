@@ -12,7 +12,7 @@ export default ({data , pageContext}) => {
       <div style={{
         paddingTop: "58px",
       }}>
-        <Header title={`Blogs in Category ${pageContext.currentPage}`}></Header>
+        <Header title={`Blogs in Category "${pageContext.tag}"`}></Header>
         {
           posts.map((post) => {
             console.log(post.frontmatter.image)
@@ -21,7 +21,7 @@ export default ({data , pageContext}) => {
               image={post.frontmatter.image}
               key={post.id}
               link={`/blog/${post.fields.slug}`}
-              tags={null} // general
+              tags={post.frontmatter.tags}
               title={post.frontmatter.title}
               text={post.excerpt}
             />
@@ -36,7 +36,7 @@ export default ({data , pageContext}) => {
 export const query = graphql`
   query getMarkdownByTag($tag: [String]) {
     allMarkdownRemark(
-      sort: {fields: [frontmatter___title], order: [DESC]},
+       sort: {fields: [frontmatter___title], order: [DESC]},
       filter: {
         frontmatter :{
           tags:{
