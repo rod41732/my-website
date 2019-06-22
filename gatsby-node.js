@@ -13,20 +13,28 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  graphql(` 
-  query countAllMarkdown {
-    allMarkdownRemark {
-      nodes {
-        id
+  return graphql(` 
+    query {
+      allMarkdownRemark {
+        nodes {
+          fields {
+            slug
+          }
+          frontmatter {
+            tags
+          }
+        }
       }
     }
-  }`).then(({data}) => {
-    console.log(`================= there're ${data.allMarkdownRemark.nodes.length} markdowns!`)
-    const numOfmarkdown = data.allMarkdownRemark.nodes.length;
-    const numOfPages = Math.ceil(numOfmarkdown/5);
+  `
+  )
+  .then(({data}) => {
+    const articles = data.allMarkdownRemark.nodes;
+    const numOfMarkdown = articles.length;
+    console.log(`================= there're ${numOfMarkdown} markdowns!`)
+    const numOfPages = Math.ceil(numOfMarkdown/5);
     for (let i=1; i<=numOfPages; i++){
       createPage({
         path: "blog/page/" + i,
@@ -38,30 +46,19 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
     }
-  })
-  return graphql(`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: '/blog' + node.fields.slug,
-        component: path.resolve(`./src/templates/blog-post.js`),
-        context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
-          slug: node.fields.slug,
-        },
+    const allTags = new Set();
+    articles.forEach((article) => {
+      (article.frontmatter.tags || ["general"]).forEach((tag) => {
+        allTags.add(tag);
       })
+      createPage({
+        path: `/blog/${article.fields.slug}`,
+        component: path.resolve('./src/templates/blog-post.js'),
+        context: {
+          slug: article.fields.slug,
+        }
+      })  
     })
+    console.log("All tags are ", allTags);
   })
 }
