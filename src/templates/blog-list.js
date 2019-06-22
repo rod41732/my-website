@@ -21,7 +21,7 @@ export default ({data , pageContext}) => {
               image={post.frontmatter.image}
               key={post.id}
               link={`/blog/${post.fields.slug}`}
-              tags={null} // general
+              tags={post.frontmatter.tags}
               title={post.frontmatter.title}
               text={post.excerpt}
             />
@@ -43,6 +43,7 @@ export const query = graphql`
           title
           date
           image
+          tags
         }
         excerpt
         fields{
