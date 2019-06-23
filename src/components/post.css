@@ -14,7 +14,6 @@
     /* position: relative; */
     float: left;
     width: calc(40% - 16px); 
-    color: red;
     padding-right: 16px;
     /* flex: 0 0 40%; */
 }
@@ -58,7 +57,11 @@
     display: inline-block;
     font-weight: bold;
     margin: 8px 0;
-    color: red;
+    color: #aaa;
+}
+
+.tag-desc {
+    margin-left: 8px;
 }
 
 .tag-container {
@@ -66,22 +69,18 @@
     margin: 4px 0;
 }
 
-.post-tag {
-    background-color: transparent;
-    color: red;
+.post-tag > a {
+    text-decoration: none; 
+    color: rgb(75, 75, 219);
     padding: 4px 8px;
     border-radius: 4px;
-    font-size: 0.8em;
     margin: 0px;
+    font-weight: bold;
     margin-right: 8px;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    font-weight: 900;
 }
 
 .post-tag:hover {
-    mix-blend-mode: screen;
-    color: #000;
-    background-color: #fff;
+    color: #777
 }
 
 .post-text {

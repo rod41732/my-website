@@ -17,10 +17,13 @@ export default ({tags, title, text, image, date, link}) => {
                     // TODO: format date
                     <div className="post-date secondary-font">{date}</div>
                 }
+                <span className="tag-desc title-font">
+                    tags:
+                </span>
                 <div className="tag-container secondary-font">
                     {
                         tags.map((tagName)  => 
-                            <Link to={`/list/tag/${tagName}`}><span key={tagName} className="post-tag">{tagName}</span></Link>
+                        <span key={tagName} className="post-tag"><Link to={`/list/tag/${tagName}`}>{tagName}</Link></span>
                         )
                     }
                 </div> 
