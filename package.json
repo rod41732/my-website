@@ -26,6 +26,8 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "argparse": "^1.0.10",
+    "gh-pages": "^2.0.1",
     "prettier": "^1.18.2"
   },
   "keywords": [
@@ -38,7 +40,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "deploy": "npm run build && node ./scripts/deploy.github.js"
   },
   "repository": {
     "type": "git",
