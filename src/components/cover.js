@@ -14,9 +14,9 @@ export default function Cover() {
                 <div className="profile-line">Such developer much wow</div>
             </div>
             <div className="profile-links">
-                <span className="post-tag">link 1</span>
-                <span className="post-tag">link 2</span>
-                <span className="post-tag">link 3</span>
+                <span className="profile-link">link 1</span>
+                <span className="profile-link">link 2</span>
+                <span className="profile-link">link 3</span>
             </div>
         </div>
     )
