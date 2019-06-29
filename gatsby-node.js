@@ -28,6 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
           frontmatter {
             tags
+            image
           }
         }
       }
@@ -68,6 +69,7 @@ exports.createPages = ({ graphql, actions }) => {
         component: path.resolve('./src/templates/blog-post.js'),
         context: {
           slug: article.fields.slug,
+          imgSrc: article.frontmatter.image,
         }
       })  
     })
