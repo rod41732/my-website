@@ -6,13 +6,15 @@ import {graphql} from 'gatsby';
 import Pagenav from '../components/pagenav';
 export default ({data , pageContext}) => {
   const posts = data.allMarkdownRemark.nodes;
+  const tag = data.allTagDescJson.nodes[0];
+  const tagDesc = tag !== undefined ? tag.desc : undefined;
   console.log(posts);
   return (
     <Layout>
       <div style={{
         paddingTop: "58px",
       }}>
-        <Header title={`Blogs in Category "${pageContext.tag}"`}></Header>
+        <Header title={`Blogs in Category "${pageContext.tag}"`} subtitle={tagDesc}></Header>
         {
           posts.map((post) => {
             console.log(post.frontmatter.image)
@@ -34,13 +36,13 @@ export default ({data , pageContext}) => {
 }
 
 export const query = graphql`
-  query getMarkdownByTag($tag: [String]) {
+  query getMarkdownByTag($tag: String) {
     allMarkdownRemark(
        sort: {fields: [frontmatter___title], order: [DESC]},
       filter: {
         frontmatter :{
           tags:{
-            in: $tag
+            in: [$tag]
           }
         }
       }) { 
@@ -57,6 +59,12 @@ export const query = graphql`
         fields{
           slug
         }
+      }
+    },
+    allTagDescJson (filter:{name: {eq: $tag}}){
+      nodes{
+        name
+        desc
       }
     }
   }
