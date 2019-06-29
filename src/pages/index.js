@@ -1,34 +1,32 @@
 import React from 'react';
-import Post from '../components/post';
-import Header from '../components/header';
-import PageNav from '../components/pagenav';
-import Layout from '../components/layout';
-import {graphql} from 'gatsby';
+import Footer from '../components/footer'
+import {graphql, Link} from 'gatsby';
+import "./index.css";
 
 export default ({data}) => {
     console.log(data);
     return (
-        <Layout>
-          <div style={{
-            paddingTop: "58px",
-          }}>
-            <Header title="Rod41732's blog" subtitle="beautiful stories, wow"/>
-            {
-                  data.allMarkdownRemark.nodes.slice(0, 5).map((post, index) => (
-                      <Post
-                          key={index}
-                          title={post.frontmatter.title}
-                          date={post.frontmatter.date}
-                          image={post.frontmatter.image}
-                          tags={post.frontmatter.tags}
-                          text={post.excerpt}
-                          link={`/article/${post.fields.slug}`}
-                      />
-                  ))
-            }
-            <PageNav numOfPages={Math.ceil(data.allMarkdownRemark.nodes.length/5)} currentPage={1}/>
+        <div>
+          <div className="home-image clearfix">
+            {/* <div className="home-container secondary-font"> */}
+              <div className="home-title  secondary-font">Rod41732</div>  
+              <div className="home-subtitle secondary-font">Dev, tech and my thoughts</div>
+            {/* </div> */}
+            <div className="home-link-container">
+              <Link to="/list/all/1" className="home-link"><div>Blog</div></Link>
+              <Link to="/list/all/1" className="home-link"><div>Dev</div></Link>
+              <Link to="/list/all/1" className="home-link"><div>Math</div></Link>
+            </div>
           </div>
-        </Layout>
+          <div className="title-font" style={{
+            border: "0px",
+            margin: "0px",
+          }}>
+          </div>
+          <div className="home-footer">
+            <Footer/>
+          </div>
+        </div>
     )
 }
 

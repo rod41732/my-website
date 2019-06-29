@@ -1,0 +1,37 @@
+.footer-text {
+    display: block;
+    padding: 16px 32px;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.footer-container {
+    width: 100vw;
+}
+
+.footer-text:first-child {
+    float: left;
+}
+.footer-text:last-child {
+    float: right;
+}
+
+.footer-link {
+    padding: 8px;
+    text-decoration: none;
+    color: unset;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .footer.footer-text {
+        flex: 0 0 100%;
+    }
+
+    .footer-container {
+        justify-content: center;
+        flex-wrap: wrap;
+        display: flex;
+    }
+}
