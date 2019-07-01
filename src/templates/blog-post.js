@@ -11,9 +11,7 @@ export default ({data}) => {
   console.log(data);
   return (
     <Layout>
-      <div style={{
-        paddingTop: "58px",
-      }}>
+      <div>
         <Header title={post.frontmatter.title}></Header>
         <Image fluid={data.file.childImageSharp.fluid}/>
         <Section>

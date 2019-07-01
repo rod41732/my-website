@@ -9,9 +9,7 @@ export default ({data , pageContext}) => {
   console.log(posts);
   return (
     <Layout>
-      <div style={{
-        paddingTop: "58px",
-      }}>
+      <div>
         <Header title={`Blogs page ${pageContext.currentPage}`}></Header>
         {
           posts.map((post) => {

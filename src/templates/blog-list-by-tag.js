@@ -11,9 +11,7 @@ export default ({data , pageContext}) => {
   console.log(posts);
   return (
     <Layout>
-      <div style={{
-        paddingTop: "58px",
-      }}>
+      <div>
         <Header title={`Blogs in Category "${pageContext.tag}"`} subtitle={tagDesc}></Header>
         {
           posts.map((post) => {

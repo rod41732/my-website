@@ -49,9 +49,7 @@ export default () => {
 }
 
 function AboutMe() {
-    return (<div style={{
-        paddingTop: "58px",
-    }}>
+    return (<div>
         <Cover/>
         <Section
             title="About myself"
