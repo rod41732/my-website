@@ -3,7 +3,7 @@
 .timeline {
     white-space: nowrap;
     overflow-x: scroll;
-    background-color: var(--subtitle-text);
+    background-color: var(--page-bg);
 }
 
 .timeline ul {

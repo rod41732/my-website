@@ -1,10 +1,10 @@
 
-.nav-height {
+.nav-height:not(.expanded) {
     height: 64px;
     line-height: 64px;
 }
 
-.nav-height.small {
+.nav-height.small, .nav-item.expanded  {
     height: 48px;
     line-height: 48px;
 }
@@ -31,7 +31,7 @@
 
 .nav-item:hover {
     cursor: pointer;
-    background-color: var(--primary-dark);
+    background-color: var(--primary);
     color: var(--header);
 }
 
@@ -45,11 +45,12 @@
 .nav-button {
     float: right;
     display: none;
+    background-color: var(--primary);
     /* font-size: 3em; */
 }
 
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 767px) {
     .nav-item:not(.nav-button) {
         float: none;
         text-align: center;
@@ -57,8 +58,8 @@
     }
 
     .nav-item:not(.nav-button):not(.logo) {
-        background-color: var(--card-bf);
-        border-bottom: 2px solid #aaa;
+        background-color: var(--page-bg);
+        border-bottom: 1px solid var(--divider);
         display: block;
         width: calc(100% - 48px);
     }

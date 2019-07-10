@@ -38,7 +38,7 @@ export default class Navbar extends React.Component {
       <>
         <div className={`nav-bar clearfix title-font ${cls}`}  id="navbar">
           <Link to="/"><div className={`nav-item logo ${cls}`}>Rod41732</div></Link>
-          <div className="nav-item nav-button" 
+          <div className={`nav-item nav-button ${cls}`} 
             onClick={() => {
               let navClass = document.querySelector("#navbar").classList;
               if (navClass.contains("expanded")) {
@@ -51,15 +51,17 @@ export default class Navbar extends React.Component {
             }}> 
             ≡ 
           </div>
-          <div  className={`nav-item ${cls}`} onClick={() => {
-            let body = document.querySelector("body")
-            let oldTheme = body.getAttribute("data-theme")
-            body.setAttribute("data-theme", oldTheme !== "dark"? "dark" : "light")
-          }}>Mode</div>
-          <Link to="/about"><div className={`nav-item ${cls}`}>About</div></Link>
-          <Link to="/home"><div className={`nav-item ${cls}`}>Home</div></Link>
-          <Link to="/math"><div className={`nav-item ${cls}`}>Math</div></Link>
-          <Link to="/dev"><div className={`nav-item ${cls}`}>Dev</div></Link>
+          <div>
+            <div className={`nav-item ${cls}`} onClick={() => {
+              let body = document.querySelector("body")
+              let oldTheme = body.getAttribute("data-theme")
+              body.setAttribute("data-theme", oldTheme !== "dark"? "dark" : "light")
+            }}>Mode</div>
+            <Link to="/about"><div className={`nav-item ${cls}`}>About</div></Link>
+            <Link to="/home"><div className={`nav-item ${cls}`}>Home</div></Link>
+            <Link to="/math"><div className={`nav-item ${cls}`}>Math</div></Link>
+            <Link to="/dev"><div className={`nav-item ${cls}`}>Dev</div></Link>
+          </div>
         </div>
         <div className="nav-height"/>
       </>

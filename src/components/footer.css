@@ -27,7 +27,7 @@
 
 @media only screen and (max-width: 767px) {
     .footer.footer-text {
-        flex: 0 0 100%;
+        flex: 0 0 calc(100% - 32px);
     }
 
     .footer-container {
