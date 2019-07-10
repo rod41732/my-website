@@ -1,0 +1,68 @@
+#terminal {
+    --bg: black;
+    --bg-highlight: rgb(31, 31, 31);
+    --text-color: rgb(3, 240, 3); /* command */
+    --output-color: rgb(228, 225, 225); /* output (stdout) */
+    --input-color: rgb(255, 166, 0); /* input (stdin) -- when program want to read input */
+    --error-color: rgb(211, 58, 58); /* stderr */
+    --prompt-color: rgb(0, 119, 255);  /* prompt  */
+    --font:  monospace;
+    --spacing: 2px;
+    --font-size: 24px;
+
+    display: flex;
+    height: 100vw;
+    background: var(--bg);
+    color: var(--text-color);
+}
+
+#input {
+    background: var(--bg);
+    color: var(--text-color);
+    font-size: var(--font-size);
+    flex: 1;
+    border: none;
+    caret-color: var(--text-color);
+}
+
+.term-line {
+    padding: var(--spacing);
+    display: flex;
+    font-size: var(--font-size);
+    width: 100vw;
+}
+
+.terminal {
+    font-family: var(--font) !important;
+    font-size: var(--font-size);
+}
+
+.term-text { /* the typed command*/
+    color: var(--text-color);
+}
+
+.term-prompt {
+    color: var(--prompt-color);
+    padding-right: 1em;
+}
+
+.term-stdout {
+    color: var(--output-color);
+}
+
+.term-stdout::before {
+    content: "]";
+    color: rgba(219, 219, 219, 0.39);
+}
+
+.term-stderr {
+    color: var(--error-color);
+}
+
+.term-stdin {
+    color: var(--input-color);
+}
+
+.term-line.term-active {
+    background-color: var(--bg-highlight);
+}
