@@ -56,10 +56,10 @@ export default class Navbar extends React.Component {
             let oldTheme = body.getAttribute("data-theme")
             body.setAttribute("data-theme", oldTheme !== "dark"? "dark" : "light")
           }}>Mode</div>
-          <Link className={`nav-item ${cls}`} to="/about"><div>About</div></Link>
-          <Link className={`nav-item ${cls}`} to="/home"><div>Home</div></Link>
-          <Link className={`nav-item ${cls}`} to="/math"><div>Math</div></Link>
-          <Link className={`nav-item ${cls}`} to="/dev"><div>Dev</div></Link>
+          <Link to="/about"><div className={`nav-item ${cls}`}>About</div></Link>
+          <Link to="/home"><div className={`nav-item ${cls}`}>Home</div></Link>
+          <Link to="/math"><div className={`nav-item ${cls}`}>Math</div></Link>
+          <Link to="/dev"><div className={`nav-item ${cls}`}>Dev</div></Link>
         </div>
         <div className="nav-height"/>
       </>

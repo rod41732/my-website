@@ -55,9 +55,9 @@ function AboutMe() {
             title="About myself"
             icon={<FontAwesomeIcon icon={faInfo}/>}
         >
-            <div>
+            <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero neque quos nisi ipsum corrupti animi debitis! Odit velit, autem numquam accusamus, corrupti id tempore iusto optio a sint laudantium quam!
-            </div>
+            </p>
         </Section>
         <Section
             icon={<FontAwesomeIcon icon={faCogs}/>}

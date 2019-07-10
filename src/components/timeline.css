@@ -10,6 +10,7 @@
     width: 100vw;
     padding: 250px 0;
     display: inline-block;
+    background-color: var(--page-bg);
 }
 
 .message-title {
@@ -36,7 +37,7 @@
     list-style-type: none;
     width: 160px;
     height: 3px;
-    background-color: var(--card-bg);
+    background-color: var(--primary);
 }
 
 .timeline ul li:not(:last-child)::after { /* dat circle */
@@ -46,8 +47,8 @@
     right: -16px;
     width: 20px;
     height: 20px;
-    background-color: var(---primary);
-    border: 2px solid var(---primary-dark);
+    background-color: var(--primary);
+    border: 2px solid var(--primary-dark);
     border-radius: 50%;
     z-index: 1;
 }

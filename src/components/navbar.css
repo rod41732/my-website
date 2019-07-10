@@ -1,12 +1,10 @@
 
 .nav-height {
-    transition: all 0.5s;
     height: 64px;
     line-height: 64px;
 }
 
 .nav-height.small {
-    transition: all 0.5s;
     height: 48px;
     line-height: 48px;
 }
@@ -21,7 +19,6 @@
 
 .nav-item {
     color: var(--header);
-    transition: all 0s;
     list-style: none;
     display: block;
     text-align: center;

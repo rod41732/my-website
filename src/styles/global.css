@@ -9,9 +9,9 @@
 
     --page-bg: #ddd; 
     --card-bg: #fff;
-    --divider-color: #bbb;
+    --divider: #bbb;
 
-
+    --shadow: #b5b5b5;
     --image-text: #fff; /* text over image */
     --image-subtitle: rgba(255, 255, 255, 0.8); /* transparent text over image */
 }
@@ -21,15 +21,16 @@
     --body: rgb(236, 236, 236);
     --secondary: rgb(207, 207, 207); /* info like dates tags */
     --subtitle-text: rgb(179, 179, 179);
-    --primary: #ff7b00d5; /* navbar ? */
+    --primary: #ff7b00; /* navbar ? */
     --primary-dark: #ffee00; /* link ? */
     --accent: #00ff22; /* buttons ? */
 
-    --page-bg: rgb(49, 49, 49); 
-    --card-bg: rgb(7, 7, 7);
-    --divider-color: rgb(71, 71, 71);
+    --page-bg: rgb(16, 16, 16); 
+    --card-bg: rgb(6, 6, 6);
+    --divider: rgb(71, 71, 71); /* also for border and stuffs*/
 
 
+    --shadow: #00000000; /* no-shadow */
     --image-text: #fff; /* text over image */
     --image-subtitle: rgba(255, 255, 255, 0.8); /* transparent text over image */
 }
@@ -40,6 +41,7 @@
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
+    transition: all 0.25s;
 }
 
 
@@ -56,12 +58,23 @@
     font-family: "Kanit", sans-serif;
 }
 
+.center-text {
+    text-align: center;
+}
+
 body {
     background-color: var(--page-bg);
+    overflow-x: hidden;
 }
 
 p {
     color: var(--body);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bold;
 }
 
 .clearfix::after {
@@ -69,3 +82,4 @@ p {
     display: table;
     clear: both;
 }
+

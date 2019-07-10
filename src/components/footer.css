@@ -6,11 +6,9 @@
     text-align: center;
 }
 
-* {
-    transition: all 0.5s;
-}
 
 .footer-container {
+    padding: 0px 16px;
     width: calc(100vw - 32px);
 }
 
@@ -19,7 +17,7 @@
 }
 .footer-text:last-child {
     float: right;
-}
+}   
 
 .footer-link {
     padding: 8px;

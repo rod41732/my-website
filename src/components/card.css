@@ -10,22 +10,23 @@
 
 
 .card:not(:last-child) {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--divider);
 }
 
 @media only screen and (min-width: 768px) {
     .card {
-        width: calc(50% - 48px);
+        width: calc(50% - 52px);
         border-radius: 4px;
         margin: 8px 8px;
         padding: 16px;
-        box-shadow: 0px 0px 3px #ccc;   
+        border: 1px solid var(--page-bg);   /* this is hacky bruh*/
     }
 }
 
 
 
 .card-title {
+    color: var(--header);
     font-weight: bold;
     font-size: 1.5em;
 }

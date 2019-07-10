@@ -5,7 +5,7 @@
     background-color:var(--card-bg);
     margin: 16px auto;
     padding: 16px;
-    box-shadow: 0px 1px 4px #999;
+    box-shadow: 0px 1px 4px var(--shadow);
 }
 
 .section-card.full-width {
@@ -26,9 +26,11 @@
 }
 
 .section-icon {
+    color: var(--header);
     font-size: 40px;
 }
 .section-title {
+    color: var(--header);
     font-size: 32px;
 }
 

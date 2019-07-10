@@ -61,5 +61,5 @@
     left: 50%;
     transform: translateX(-50%);
     border: 2px solid var(--image-text);
-    box-shadow: 0px 0px 4px #444;
+    box-shadow: 0px 0px 4px var(--shadow);
 }

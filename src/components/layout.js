@@ -3,7 +3,7 @@ import Navbar from './navbar';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import Footer from '../components/footer';
-
+import './layout.css';
 
 
 export default function Layout({ children }) {
@@ -31,7 +31,7 @@ export default function Layout({ children }) {
                 <Navbar/>
                 {children}
             </div>
-            <Footer />
+            <Footer extraClass="footer"/>
         </>
     )
 }
