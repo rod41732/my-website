@@ -1,8 +1,9 @@
 .header {
+    color: var(--header);
     padding: 8px;
     text-align: center;
 }
 
 .sub-title {
-    color: #777;
+    color: var(--subtitle-text);
 }

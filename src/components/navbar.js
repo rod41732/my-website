@@ -51,6 +51,11 @@ export default class Navbar extends React.Component {
             }}> 
             ≡ 
           </div>
+          <div  className={`nav-item ${cls}`} onClick={() => {
+            let body = document.querySelector("body")
+            let oldTheme = body.getAttribute("data-theme")
+            body.setAttribute("data-theme", oldTheme !== "dark"? "dark" : "light")
+          }}>Mode</div>
           <Link className={`nav-item ${cls}`} to="/about"><div>About</div></Link>
           <Link className={`nav-item ${cls}`} to="/home"><div>Home</div></Link>
           <Link className={`nav-item ${cls}`} to="/math"><div>Math</div></Link>

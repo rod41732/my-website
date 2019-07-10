@@ -1,3 +1,40 @@
+:root {
+    --header: rgb(0, 0, 0); 
+    --body: rgb(42, 42, 42);
+    --secondary: rgb(63, 63, 63); /* info like dates tags */
+    --subtitle-text: rgb(121, 121, 121);
+    --primary: #ffee00; /* navbar ? */
+    --primary-dark: #ffb300; /* link ? */
+    --accent: #0099ff; /* buttons ? */
+
+    --page-bg: #ddd; 
+    --card-bg: #fff;
+    --divider-color: #bbb;
+
+
+    --image-text: #fff; /* text over image */
+    --image-subtitle: rgba(255, 255, 255, 0.8); /* transparent text over image */
+}
+
+[data-theme="dark"] {
+    --header: rgb(245, 245, 245); 
+    --body: rgb(236, 236, 236);
+    --secondary: rgb(207, 207, 207); /* info like dates tags */
+    --subtitle-text: rgb(179, 179, 179);
+    --primary: #ff7b00d5; /* navbar ? */
+    --primary-dark: #ffee00; /* link ? */
+    --accent: #00ff22; /* buttons ? */
+
+    --page-bg: rgb(49, 49, 49); 
+    --card-bg: rgb(7, 7, 7);
+    --divider-color: rgb(71, 71, 71);
+
+
+    --image-text: #fff; /* text over image */
+    --image-subtitle: rgba(255, 255, 255, 0.8); /* transparent text over image */
+}
+
+
 * {
     padding: 0px;
     margin: 0px;
@@ -20,7 +57,11 @@
 }
 
 body {
-    background-color: #eee;
+    background-color: var(--page-bg);
+}
+
+p {
+    color: var(--body);
 }
 
 .clearfix::after {

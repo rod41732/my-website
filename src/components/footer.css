@@ -6,8 +6,12 @@
     text-align: center;
 }
 
+* {
+    transition: all 0.5s;
+}
+
 .footer-container {
-    width: 100vw;
+    width: calc(100vw - 32px);
 }
 
 .footer-text:first-child {
@@ -20,9 +24,8 @@
 .footer-link {
     padding: 8px;
     text-decoration: none;
-    color: unset;
+    color: inherit; /* inherit */
 }
-
 
 @media only screen and (max-width: 767px) {
     .footer.footer-text {

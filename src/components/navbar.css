@@ -16,12 +16,12 @@
     position: fixed;
     z-index: 1;
     width: 100%;
-    background-color: rgb(253, 237, 5);
+    background-color: var(--primary);
 }
 
 .nav-item {
-    color: black;
-    transition: all 0.2s;
+    color: var(--header);
+    transition: all 0s;
     list-style: none;
     display: block;
     text-align: center;
@@ -34,8 +34,8 @@
 
 .nav-item:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    background-color: var(--primary-dark);
+    color: var(--header);
 }
 
 .nav-item.logo {
@@ -60,7 +60,7 @@
     }
 
     .nav-item:not(.nav-button):not(.logo) {
-        background-color: #eee;
+        background-color: var(--card-bf);
         border-bottom: 2px solid #aaa;
         display: block;
         width: calc(100% - 48px);

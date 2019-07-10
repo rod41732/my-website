@@ -1,3 +1,6 @@
+
+
+
 .home-image {
     position: relative;
     content: " ";
@@ -5,6 +8,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0;
+    color: var(--image-text);
     margin: 0;
     height: 100vh;
 }
@@ -12,24 +16,21 @@
 .home-container {
     position: absolute;
     top: 10vh;
-    /* left: 50%;
-    transform: translateX(-50%); */
     text-align: center;
 }
-
 .home-title {
     padding-top: 72px;
     padding-bottom: 8px;
     font-size: 2.5em;
     text-align: center;
-    color: white;
+    color: var(--image-text);
     font-weight: bold;
 }
 
 .home-subtitle {
     text-align: center;
     font-size: 1.3em;
-    color: white;
+    color: var(--image-text);
     font-weight: bold;
 }
 
@@ -49,8 +50,8 @@
 
 
 .home-link:hover {
-    color: #666;
-    background-color: #fff;
+    color: var(--subtitle-text);
+    background-color: var(--image-text);
 }
 
 .home-link-container {

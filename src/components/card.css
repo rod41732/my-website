@@ -1,9 +1,13 @@
+/*
+    Card's in about page 
+*/
 .card {
-    background-color: white;
+    background-color: var(--card-bg);
     width: calc(100% - 64px);
     display: inline-block;
     padding: 24px;
 }
+
 
 .card:not(:last-child) {
     border-bottom: 1px solid #ddd;
@@ -27,5 +31,5 @@
 }
 
 .card-body {
-    color: #333;
+    color: var(--body);
 }

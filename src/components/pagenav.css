@@ -5,14 +5,14 @@
 
 .page-nav-button {
     font-size: 1.2em;
-    color: #222;
+    color: var(--header);
     display: inline-block;
     padding: 8px 16px;
     vertical-align: middle;
     /* text-align: center; */
     border-width: 2px 0 2px 2px;
     border-style: solid;
-    border-color: #777;
+    border-color: var(--divider-color);
 }
 
 .page-nav > :last-child > .page-nav-button {
@@ -32,5 +32,5 @@
 }
 
 .page-nav-button.active {
-    background-color: #bbb;
+    background-color: var(--page-bg);
 }
