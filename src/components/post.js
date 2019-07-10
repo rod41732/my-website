@@ -23,11 +23,12 @@ export default ({tags, title, text, image, date, link}) => {
                 <div className="tag-container secondary-font">
                     {
                         tags.map((tagName)  => 
-                        <span key={tagName} className="post-tag"><Link to={`/list/tag/${tagName}`}>{tagName}</Link></span>
+                        <span key={tagName} className="post-tag"><Link className="link" to={`/list/tag/${tagName}`}>{tagName}</Link></span>
                         )
                     }
                 </div> 
             </div>
+            <div className="post-divider"/>
             <p className="post-text">
                 {text || `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Ducimus quas, laboriosam beatae odio expedita itaque ab commodi

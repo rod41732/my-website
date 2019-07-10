@@ -34,7 +34,7 @@ query($slug: String!, $imgSrc: String!) {
   },
   file(relativePath: {eq: $imgSrc}){
     childImageSharp{
-      fluid(maxWidth:960, maxHeight: 540) {
+      fluid(maxWidth:1920, maxHeight: 540) {
         ...GatsbyImageSharpFluid
       }
     }

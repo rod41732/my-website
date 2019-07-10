@@ -5,6 +5,7 @@
     background-color:var(--card-bg);
     margin: 16px auto;
     padding: 16px;
+    border-radius: 12px;
     box-shadow: 0px 1px 4px var(--shadow);
 }
 

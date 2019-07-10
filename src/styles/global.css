@@ -1,11 +1,20 @@
 :root {
+
+    /* ========================= Global stuffs =========================  */
+    --border-radius-sm: 2px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    /* =================================================================  */
+
     --header: rgb(0, 0, 0); 
     --body: rgb(42, 42, 42);
     --secondary: rgb(63, 63, 63); /* info like dates tags */
     --subtitle-text: rgb(121, 121, 121);
     --primary: #ffee00; /* navbar ? */
     --primary-dark: #ffb300; /* link ? */
+
     --accent: #0099ff; /* buttons ? */
+    --accent-2: #9900ff; /* button click/hover ? */
 
     --page-bg: #ddd; 
     --card-bg: #fff;
@@ -23,7 +32,9 @@
     --subtitle-text: rgb(179, 179, 179);
     --primary: #ff7b00; /* navbar ? */
     --primary-dark: #ffee00; /* link ? */
+
     --accent: #00ff22; /* buttons ? */
+    --accent-2: #0099ff; /* buttons click/hover */
 
     --page-bg: rgb(16, 16, 16); 
     --card-bg: rgb(6, 6, 6);
@@ -73,9 +84,20 @@ p {
 
 a {
     text-decoration: none;
-    color: var(--accent);
-    font-weight: bold;
 }
+
+/* general hyperlinks*/
+a.link {
+    font-weight: bold;
+    color: var(--accent);
+    padding: 0px 2px;
+}
+
+a.link:hover {
+    color: var(--accent-2);
+}
+
+
 
 .clearfix::after {
     content: "";

@@ -18,7 +18,7 @@ export default ({data , pageContext}) => {
             console.log(post.frontmatter.image)
             return <Post
               date={post.frontmatter.date}
-              image={post.frontmatter.image}
+              image={"/" + post.frontmatter.image}
               key={post.id}
               link={`/article/${post.fields.slug}`}
               tags={post.frontmatter.tags}
