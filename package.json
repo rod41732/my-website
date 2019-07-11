@@ -28,7 +28,9 @@
   },
   "devDependencies": {
     "argparse": "^1.0.10",
+    "chai": "^4.2.0",
     "gh-pages": "^2.0.1",
+    "mocha": "^6.1.4",
     "prettier": "^1.18.2"
   },
   "keywords": [
