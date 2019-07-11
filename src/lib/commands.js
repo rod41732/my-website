@@ -3,11 +3,11 @@ import data from '../data/mock'
 
 const API = 'https://example.com/api'
 
-export async function ls({path, workdir})  { // at ${API}/${fullpath} must implement `GET` for `ls` to work
-    const fullpath = resolve(path, workdir)
+export async function ls({workDir, relativePath})  { // at ${API}/${fullpath} must implement `GET` for `ls` to work
+    const fullpath = resolve(workDir, relativePath)
     return get({
-        path: path,
-        workdir: workdir,
+        relativePath: relativePath,
+        workDir: workDir,
     }).then((res) => { // parse the response
         console.log(`"file" ${fullpath} = ${res}`)
         if (!res) { // TODO: fix this so falsy value isn't considered as error
@@ -21,10 +21,24 @@ export async function ls({path, workdir})  { // at ${API}/${fullpath} must imple
 
 }
 
+export async function cd({relativePath,  workDir}) {
+    console.log("cd arguments",workDir, relativePath)
+    const fullPath = resolve(workDir, relativePath);
+    const fileOrDir = await get({
+        relativePath,
+        workDir,
+    });
+    if (!fileOrDir) {
+        throw new Error("Path not found")
+    } else if (!fileOrDir.children) {
+        throw new Error("Not a directory")
+    }
+    return fullPath
+}
 // export const
 
-export async function get({path, workdir}) {
-    const fullpath = resolve(workdir, path)
+export async function get({workDir, relativePath}) {
+    const fullpath = resolve(workDir, relativePath)
     const parts = fullpath.slice(1).split("/") //ignore 1st
     console.log(parts)
     let result = data

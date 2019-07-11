@@ -1,22 +1,24 @@
 import React, {useState, useEffect} from 'react';
-import {ls, get} from '../lib/commands';
+import {ls, get, cd} from '../lib/commands';
 import './terminal.css';
 
 export default () => {
     // constants 
-    const prompt = "rod@doge ~$ ";
     // states
     const [command, setCommand] = useState("echo hello world ...");
     const [workDir, setWorkDir] = useState("/");
+    const [lastWorkDirs, setLastWorkDirs] = useState("/");
     const [inputs, setInputs] = useState(["echo Hello Road!"]); // input lines
     const [outputs, setOutputs] = useState(["Hello Road!"]); // output lines
 
     // const [command, setCommand] = useState("echo hello world ..."); // errors
     const submitCommand = async () => {
         const lastCommand = command;
+        const oldWorkDir = workDir;
         setCommand("");
         const tokens = lastCommand.trim().split(" ");
-        console.log(tokens)
+        console.log("bash: ", tokens)
+        console.log("bash: workdir", workDir)
         let result;
         try { // TODO: spaghetti
             switch (tokens[0]) {
@@ -28,15 +30,21 @@ export default () => {
                     break
                 case "ls":
                     result = await ls({
-                        path: tokens[1] || ".",
-                         workdir: workDir
+                        relativePath: tokens[1] || ".",
+                        workDir,
                     })
                     result = result.join("\n");
                     break;
+                case "cd":
+                    result = await cd({
+                        relativePath: tokens[1] || "/", // home = root lol
+                        workDir
+                    })
+                    setWorkDir(result)
                 default:
                     result = (await get({
-                        path: tokens[0],
-                        workdir: workDir,
+                        relativePath: tokens[0],
+                        workDir,
                     }))
                     result = {...result, children: undefined}
                     result = JSON.stringify(result)
@@ -47,6 +55,7 @@ export default () => {
         }
         setInputs([...inputs, lastCommand])
         setOutputs([...outputs, ">>" + result])
+        setLastWorkDirs([...lastWorkDirs, oldWorkDir])
     }
 
 
@@ -76,23 +85,21 @@ export default () => {
             {/* actually term line = 1 block (not necessary 1 line) */}
             {
                 (() => {
-                    console.log(inputs.length)
                     return inputs.map((inp, idx) => {
-                        console.log(outputs)
-                        return (<>
-                            <div key={idx} className="term-line">
-                                <span className="term-prompt">{prompt}</span>
+                        return (<div key={idx}>
+                            <div className="term-line">
+                                <span className="term-prompt">road@doge {lastWorkDirs[idx]} $</span>
                                 <span className="term-text">{inp}</span>
                             </div> 
                             <div className="line">
                                 <TermOutput out={outputs[idx]}/>
                             </div>
-                        </>)
+                        </div>)
                     })
                 })()
             }
             <div className="term-line term-active">  {/* active line, prompting for command*/}
-                <span className="term-prompt">rod@doge ~ $</span>    
+                <span className="term-prompt">road@doge {workDir} $</span>    
                 <input type="text" value={command} id="input" onChange={(e) => {
                     setCommand(e.target.value);
                 }}/>
@@ -110,7 +117,6 @@ const TermOutput = ({out}) => {
     if (!out) {
         return <></>
     }
-    console.log(out)
     const lines = out.split("\n");
     return lines.map((text, idx) =>(
         <div key={idx} className="term-stdout">{text}</div>
