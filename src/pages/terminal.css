@@ -6,7 +6,7 @@
     --input-color: rgb(255, 166, 0); /* input (stdin) -- when program want to read input */
     --error-color: rgb(211, 58, 58); /* stderr */
     --prompt-color: rgb(0, 119, 255);  /* prompt  */
-    --font:  monospace;
+    --font:  'Courier New', Courier, monospace;
     --spacing: 2px;
     --font-size: 24px;
 
@@ -14,16 +14,28 @@
     min-height: 100vh;
     background: var(--bg);
     color: var(--text-color);
+    font-family:  'Courier New', Courier, monospace !important;
+    font-size: var(--font-size);
+
 }
+/* Apply font to all (to prevent override from global)*/
 
 #input {
-    background: var(--bg);
+    background: var(--bg-highlight);
     color: var(--text-color);
     font-size: var(--font-size);
+    font-family: var(--font) !important;
     flex: 1;
-    border: none;
+    border: 0;
+    outline: 0;
     caret-color: var(--text-color);
 }
+
+#input:focus {
+    border: 0;
+    outline: 0; 
+}
+
 
 .term-line {
     padding: var(--spacing);
@@ -32,13 +44,12 @@
     width: 100vw;
 }
 
-.terminal {
-    font-family: var(--font) !important;
-    font-size: var(--font-size);
-}
-
 .term-text { /* the typed command*/
     color: var(--text-color);
+}
+
+.term-window {
+    font-family: 'Courier New', Courier, monospace !important;
 }
 
 .term-prompt {
