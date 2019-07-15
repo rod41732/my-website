@@ -1,109 +1,102 @@
-
-
 .timeline {
-    white-space: nowrap;
-    overflow-x: scroll;
-    background-color: var(--page-bg);
+  white-space: nowrap;
+  overflow-x: scroll;
+  background-color: var(--page-bg);
 }
 
 .timeline ul {
-    width: 100vw;
-    padding: 250px 0;
-    display: inline-block;
-    background-color: var(--page-bg);
+  width: 100vw;
+  padding: 250px 0;
+  display: inline-block;
+  background-color: var(--page-bg);
 }
 
 .message-title {
-    font-size: 1.75em;
-    font-weight: 600;
-    padding: 8px;
-    color: var(--body);   
+  font-size: 1.75em;
+  font-weight: 600;
+  padding: 8px;
+  color: var(--body);
 }
 
-
 .message-time {
-    font-size: 1em;
-    color: var(--secondary);
+  font-size: 1em;
+  color: var(--secondary);
 }
 
 .message-body {
-    font-size: 1em;
-    color: var(--body);
+  font-size: 1em;
+  color: var(--body);
 }
 
 .timeline ul li {
-    display: inline-block;
-    position: relative;
-    list-style-type: none;
-    width: 160px;
-    height: 3px;
-    background-color: var(--primary);
+  display: inline-block;
+  position: relative;
+  list-style-type: none;
+  width: 160px;
+  height: 3px;
+  background-color: var(--primary);
 }
 
-.timeline ul li:not(:last-child)::after { /* dat circle */
-    content: " ";
-    position: absolute;
-    top: -10px;
-    right: -16px;
-    width: 20px;
-    height: 20px;
-    background-color: var(--primary);
-    border: 2px solid var(--primary-dark);
-    border-radius: 50%;
-    z-index: 1;
+.timeline ul li:not(:last-child)::after {
+  /* dat circle */
+  content: " ";
+  position: absolute;
+  top: -10px;
+  right: -16px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary);
+  border: 2px solid var(--primary-dark);
+  border-radius: 50%;
+  z-index: 1;
 }
-
-
 
 .timeline ul li .message-box {
-    position: absolute;
-    width: 253px;
-    /* height: 220px; */
-    top: 22px;
-    left: 120px;
-    padding: 15px;
-    border-radius: 8px;
-    background-color: var(--card-bg);
-    white-space: normal;
+  position: absolute;
+  width: 253px;
+  /* height: 220px; */
+  top: 22px;
+  left: 120px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  white-space: normal;
 }
 
-.timeline ul li:nth-child(odd) .message-box{
-    transform: translateY(-100%);
-    top: -16px;
+.timeline ul li:nth-child(odd) .message-box {
+  transform: translateY(-100%);
+  top: -16px;
 }
 
 .timeline ul li:nth-child(even) .message-box:hover {
-    transform: scale(1.05, 1.05) translateX(2.5%) translateY(2.5% );
-    /* color: red; */
+  transform: scale(1.05, 1.05) translateX(2.5%) translateY(2.5%);
+  /* color: red; */
 }
 
-.timeline ul li:nth-child(odd) .message-box:hover{
-    transform:  translateY(-104%) scale(1.05, 1.05) translateX(2%);
+.timeline ul li:nth-child(odd) .message-box:hover {
+  transform: translateY(-104%) scale(1.05, 1.05) translateX(2%);
 }
-
-
-
 
 .timeline ul li:nth-child(odd) .message-box::after {
-    content: "";
-    position: absolute;
-    width: 0px;
-    height: 0px;
-    bottom: -8px;
-    left: 32px;
-    border-style: solid;
-    border-width: 10px 10px 0 10px;
-    border-color: var(--card-bg) transparent transparent transparent;
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  bottom: -8px;
+  left: 32px;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: var(--card-bg) transparent transparent transparent;
 }
 
 .timeline ul li:nth-child(even) .message-box::after {
-    content: "";
-    position: absolute;
-    width: 0px;
-    height: 0px;
-    top: -8px;
-    left: 32px;
-    border-style: solid;
-    border-width: 0 10px 10px 10px;
-    border-color: transparent transparent var(--card-bg) transparent;
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: -8px;
+  left: 32px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent var(--card-bg) transparent;
 }

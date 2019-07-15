@@ -1,70 +1,68 @@
-
 .feed-post {
-    width: 75%;
-    margin: 16px auto;
-    background-color: var(--card-bg);
-    padding: 16px;
-    border-radius: 4px;
-    border: none;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  width: 75%;
+  margin: 16px auto;
+  background-color: var(--card-bg);
+  padding: 16px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .image-container {
-    position: relative;
-    color: var(--card-bg);
+  position: relative;
+  color: var(--card-bg);
 }
 
 .post-img {
-    width: 100%;
-    height: auto;
-    /* height: 240px; */
+  width: 100%;
+  height: auto;
+  /* height: 240px; */
 }
 
 .post-info {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    padding: 0px 16px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  padding: 0px 16px;
 }
 
 .post-title {
-    font-weight: 400;
-    font-size: 1.5em;
-    padding-bottom: 8px;
+  font-weight: 400;
+  font-size: 1.5em;
+  padding-bottom: 8px;
 }
 
 .post-date {
-    display: block;
-    font-weight: bold;
-    margin: 8px 0;
-    color: rgba(255, 255, 255, 0.75);
+  display: block;
+  font-weight: bold;
+  margin: 8px 0;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .tag-container {
-    display: block;
-    margin: 4px 0;
+  display: block;
+  margin: 4px 0;
 }
 
 .post-tag {
-    background-color: transparent;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    margin: 0px;
-    margin-right: 8px;
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    font-weight: 900;
+  background-color: transparent;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin: 0px;
+  margin-right: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  font-weight: 900;
 }
 
 .post-tag:hover {
-    mix-blend-mode: screen;
-    color: #000;
-    background-color: #fff;
+  mix-blend-mode: screen;
+  color: #000;
+  background-color: #fff;
 }
 
 .post-text {
-    margin-top: 16px;
-    color: #222;
+  margin-top: 16px;
+  color: #222;
 }
-

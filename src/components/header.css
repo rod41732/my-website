@@ -1,12 +1,12 @@
 .header-container {
-    padding: 16px 0 24px 0;
+  padding: 16px 0 24px 0;
 }
 
 .header {
-    color: var(--header);
-    padding: 8px;
+  color: var(--header);
+  padding: 8px;
 }
 
 .sub-title {
-    color: var(--subtitle-text);
+  color: var(--subtitle-text);
 }

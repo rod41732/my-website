@@ -1,107 +1,103 @@
 :root {
+  /* ========================= Global stuffs =========================  */
+  --border-radius-sm: 2px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  /* =================================================================  */
 
-    /* ========================= Global stuffs =========================  */
-    --border-radius-sm: 2px;
-    --border-radius-md: 8px;
-    --border-radius-lg: 12px;
-    /* =================================================================  */
+  --header: rgb(0, 0, 0);
+  --body: rgb(42, 42, 42);
+  --secondary: rgb(63, 63, 63); /* info like dates tags */
+  --subtitle-text: rgb(121, 121, 121);
+  --primary: #ffee00; /* navbar ? */
+  --primary-dark: #ffb300; /* link ? */
 
-    --header: rgb(0, 0, 0); 
-    --body: rgb(42, 42, 42);
-    --secondary: rgb(63, 63, 63); /* info like dates tags */
-    --subtitle-text: rgb(121, 121, 121);
-    --primary: #ffee00; /* navbar ? */
-    --primary-dark: #ffb300; /* link ? */
+  --accent: #0099ff; /* buttons ? */
+  --accent-2: #9900ff; /* button click/hover ? */
 
-    --accent: #0099ff; /* buttons ? */
-    --accent-2: #9900ff; /* button click/hover ? */
+  --page-bg: #ddd;
+  --card-bg: #fff;
+  --divider: #bbb;
 
-    --page-bg: #ddd; 
-    --card-bg: #fff;
-    --divider: #bbb;
-
-    --shadow: #b5b5b5;
-    --image-text: #fff; /* text over image */
-    --image-subtitle: rgba(255, 255, 255, 0.8); /* transparent text over image */
+  --shadow: #b5b5b5;
+  --image-text: #fff; /* text over image */
+  --image-subtitle: rgba(255, 255, 255, 0.8); /* transparent text over image */
 }
 
 [data-theme="dark"] {
-    --header: rgb(245, 245, 245); 
-    --body: rgb(236, 236, 236);
-    --secondary: rgb(207, 207, 207); /* info like dates tags */
-    --subtitle-text: rgb(179, 179, 179);
-    --primary: #ff7b00; /* navbar ? */
-    --primary-dark: #ffee00; /* link ? */
+  --header: rgb(245, 245, 245);
+  --body: rgb(236, 236, 236);
+  --secondary: rgb(207, 207, 207); /* info like dates tags */
+  --subtitle-text: rgb(179, 179, 179);
+  --primary: #ff7b00; /* navbar ? */
+  --primary-dark: #ffee00; /* link ? */
 
-    --accent: #00ff22; /* buttons ? */
-    --accent-2: #0099ff; /* buttons click/hover */
+  --accent: #00ff22; /* buttons ? */
+  --accent-2: #0099ff; /* buttons click/hover */
 
-    --page-bg: rgb(16, 16, 16); 
-    --card-bg: rgb(6, 6, 6);
-    --divider: rgb(71, 71, 71); /* also for border and stuffs*/
+  --page-bg: rgb(16, 16, 16);
+  --card-bg: rgb(6, 6, 6);
+  --divider: rgb(71, 71, 71); /* also for border and stuffs*/
 
-
-    --shadow: #00000000; /* no-shadow */
-    --image-text: #fff; /* text over image */
-    --image-subtitle: rgba(255, 255, 255, 0.8); /* transparent text over image */
+  --shadow: #00000000; /* no-shadow */
+  --image-text: #fff; /* text over image */
+  --image-subtitle: rgba(255, 255, 255, 0.8); /* transparent text over image */
 }
-
 
 * {
-    padding: 0px;
-    margin: 0px;
-    transition: all 0.25s;
+  padding: 0px;
+  margin: 0px;
+  transition: all 0.25s;
 }
 
-
-.title-font ,.title-font * {
-    font-family: 'Kanit', sans-serif;
+.title-font,
+.title-font * {
+  font-family: "Kanit", sans-serif;
 }
 
-.secondary-font, .secondary-font * {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: light;
+.secondary-font,
+.secondary-font * {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: light;
 }
 
-.accent-font, .accent-font * {
-    font-family: "Kanit", sans-serif;
+.accent-font,
+.accent-font * {
+  font-family: "Kanit", sans-serif;
 }
 
 .center-text {
-    text-align: center;
+  text-align: center;
 }
 
 body {
-    background-color: var(--page-bg);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-    overflow-x: hidden;
+  background-color: var(--page-bg);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  overflow-x: hidden;
 }
 
 p {
-    color: var(--body);
+  color: var(--body);
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* general hyperlinks*/
 a.link {
-    font-weight: bold;
-    color: var(--accent);
-    padding: 0px 2px;
+  font-weight: bold;
+  color: var(--accent);
+  padding: 0px 2px;
 }
 
 a.link:hover {
-    color: var(--accent-2);
+  color: var(--accent-2);
 }
-
-
 
 .clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
-

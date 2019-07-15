@@ -2,36 +2,34 @@
     Card's in about page 
 */
 .card {
-    background-color: var(--card-bg);
-    width: calc(100% - 64px);
-    display: inline-block;
-    padding: 24px;
+  background-color: var(--card-bg);
+  width: calc(100% - 64px);
+  display: inline-block;
+  padding: 24px;
 }
 
 @media only screen and (max-width: 767px) {
-    .card:not(:last-child) {
-        border-bottom: 1px solid var(--divider);
-    }
+  .card:not(:last-child) {
+    border-bottom: 1px solid var(--divider);
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .card {
-        width: calc(50% - 52px);
-        border-radius: var(--border-radius-md);
-        margin: 8px 8px;
-        padding: 16px;
-        border: 1px solid var(--divider);   /* this is hacky bruh*/
-    }
+  .card {
+    width: calc(50% - 52px);
+    border-radius: var(--border-radius-md);
+    margin: 8px 8px;
+    padding: 16px;
+    border: 1px solid var(--divider); /* this is hacky bruh*/
+  }
 }
 
-
-
 .card-title {
-    color: var(--header);
-    font-weight: bold;
-    font-size: 1.5em;
+  color: var(--header);
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 .card-body {
-    color: var(--body);
+  color: var(--body);
 }

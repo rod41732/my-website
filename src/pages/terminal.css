@@ -1,79 +1,82 @@
 #terminal {
-    --bg: black;
-    --bg-highlight: rgb(31, 31, 31);
-    --text-color: rgb(3, 240, 3); /* command */
-    --output-color: rgb(228, 225, 225); /* output (stdout) */
-    --input-color: rgb(255, 166, 0); /* input (stdin) -- when program want to read input */
-    --error-color: rgb(211, 58, 58); /* stderr */
-    --prompt-color: rgb(0, 119, 255);  /* prompt  */
-    --font:  'Courier New', Courier, monospace;
-    --spacing: 2px;
-    --font-size: 24px;
+  --bg: black;
+  --bg-highlight: rgb(31, 31, 31);
+  --text-color: rgb(3, 240, 3); /* command */
+  --output-color: rgb(228, 225, 225); /* output (stdout) */
+  --input-color: rgb(
+    255,
+    166,
+    0
+  ); /* input (stdin) -- when program want to read input */
+  --error-color: rgb(211, 58, 58); /* stderr */
+  --prompt-color: rgb(0, 119, 255); /* prompt  */
+  --font: "Courier New", Courier, monospace;
+  --spacing: 2px;
+  --font-size: 24px;
 
-    display: flex;
-    min-height: 100vh;
-    background: var(--bg);
-    color: var(--text-color);
-    font-family:  'Courier New', Courier, monospace !important;
-    font-size: var(--font-size);
-
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text-color);
+  font-family: "Courier New", Courier, monospace !important;
+  font-size: var(--font-size);
 }
 /* Apply font to all (to prevent override from global)*/
 
 #input {
-    background: var(--bg-highlight);
-    color: var(--text-color);
-    font-size: var(--font-size);
-    font-family: var(--font) !important;
-    flex: 1;
-    border: 0;
-    outline: 0;
-    caret-color: var(--text-color);
+  background: var(--bg-highlight);
+  color: var(--text-color);
+  font-size: var(--font-size);
+  font-family: var(--font) !important;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  caret-color: var(--text-color);
 }
 
 #input:focus {
-    border: 0;
-    outline: 0; 
+  border: 0;
+  outline: 0;
 }
-
 
 .term-line {
-    padding: var(--spacing);
-    display: flex;
-    font-size: var(--font-size);
-    width: 100vw;
+  padding: var(--spacing);
+  display: flex;
+  font-size: var(--font-size);
+  width: 100vw;
 }
 
-.term-text { /* the typed command*/
-    color: var(--text-color);
+.term-text {
+  /* the typed command*/
+  color: var(--text-color);
 }
 
 .term-window {
-    font-family: 'Courier New', Courier, monospace !important;
+  font-family: "Courier New", Courier, monospace !important;
 }
 
 .term-prompt {
-    color: var(--prompt-color);
-    padding-right: 1em;
+  color: var(--prompt-color);
+  padding-right: 1em;
 }
 
 .term-stdout {
-    color: var(--output-color);
+  color: var(--output-color);
 }
 
 .term-stdout::before {
-    content: "]";
-    color: rgba(219, 219, 219, 0.39);
+  content: "]";
+  color: rgba(219, 219, 219, 0.39);
 }
 
 .term-stderr {
-    color: var(--error-color);
+  color: var(--error-color);
 }
 
 .term-stdin {
-    color: var(--input-color);
+  color: var(--input-color);
 }
 
 .term-line.term-active {
-    background-color: var(--bg-highlight);
+  background-color: var(--bg-highlight);
 }

@@ -1,41 +1,39 @@
-
 .section-card {
-    display: block;
-    width: calc(75% - 32px);
-    background-color:var(--card-bg);
-    margin: 16px auto;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0px 1px 4px var(--shadow);
+  display: block;
+  width: calc(75% - 32px);
+  background-color: var(--card-bg);
+  margin: 16px auto;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0px 1px 4px var(--shadow);
 }
 
 .section-card.full-width {
-    width: calc(100%);
-    margin: 16px 0;
-    padding: 16px 0;
-    border: 0px;
+  width: calc(100%);
+  margin: 16px 0;
+  padding: 16px 0;
+  border: 0px;
 }
 
 @media only screen and (max-width: 768px) {
-    .section-card {
-        width: calc(90% - 32px);
-    }
+  .section-card {
+    width: calc(90% - 32px);
+  }
 }
 
 .section-header {
-    text-align: center;
+  text-align: center;
 }
 
 .section-icon {
-    color: var(--header);
-    font-size: 40px;
+  color: var(--header);
+  font-size: 40px;
 }
 .section-title {
-    color: var(--header);
-    font-size: 32px;
+  color: var(--header);
+  font-size: 32px;
 }
 
-
 .section-content {
-    margin: 16px 4px;
+  margin: 16px 4px;
 }

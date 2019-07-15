@@ -1,83 +1,78 @@
-
 .nav-height:not(.expanded) {
-    height: 64px;
-    line-height: 64px;
+  height: 64px;
+  line-height: 64px;
 }
 
-.nav-height.small, .nav-item.expanded  {
-    height: 48px;
-    line-height: 48px;
+.nav-height.small,
+.nav-item.expanded {
+  height: 48px;
+  line-height: 48px;
 }
-
 
 .nav-bar {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    background-color: var(--primary);
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: var(--primary);
 }
 
 .nav-item {
-    color: var(--header);
-    list-style: none;
-    display: block;
-    text-align: center;
-    float: right;   
-    padding: 0 24px;
-    font-size: 1.4em;
-    /* font-weight: bold; */
-    /* text-align: center; */
+  color: var(--header);
+  list-style: none;
+  display: block;
+  text-align: center;
+  float: right;
+  padding: 0 24px;
+  font-size: 1.4em;
+  /* font-weight: bold; */
+  /* text-align: center; */
 }
 
 .nav-item:hover {
-    cursor: pointer;
-    background-color: var(--primary);
-    color: var(--header);
+  cursor: pointer;
+  background-color: var(--primary);
+  color: var(--header);
 }
 
 .nav-item.logo {
-    float: left;
-    width: unset;
-    padding: 0px 16px;
-    display: block;
+  float: left;
+  width: unset;
+  padding: 0px 16px;
+  display: block;
 }
 
 .nav-button {
-    float: right;
-    display: none;
-    background-color: var(--primary);
-    /* font-size: 3em; */
+  float: right;
+  display: none;
+  background-color: var(--primary);
+  /* font-size: 3em; */
 }
-
 
 @media only screen and (max-width: 767px) {
-    .nav-item:not(.nav-button) {
-        float: none;
-        text-align: center;
-        margin: 0 auto;
-    }
+  .nav-item:not(.nav-button) {
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+  }
 
-    .nav-item:not(.nav-button):not(.logo) {
-        background-color: var(--page-bg);
-        border-bottom: 1px solid var(--divider);
-        display: block;
-        width: calc(100% - 48px);
-    }
+  .nav-item:not(.nav-button):not(.logo) {
+    background-color: var(--page-bg);
+    border-bottom: 1px solid var(--divider);
+    display: block;
+    width: calc(100% - 48px);
+  }
 
-    .nav-button {
-        display: block;
-        float: right;
-    }
+  .nav-button {
+    display: block;
+    float: right;
+  }
 
-    .nav-item.logo {
-        margin: 0 0;
-        display: inline-block;
-    }
+  .nav-item.logo {
+    margin: 0 0;
+    display: inline-block;
+  }
 
-
-    .nav-bar:not(.expanded) .nav-item:not(.logo):not(.nav-button) {
-        display: none;
-    }
+  .nav-bar:not(.expanded) .nav-item:not(.logo):not(.nav-button) {
+    display: none;
+  }
 }
-
-
