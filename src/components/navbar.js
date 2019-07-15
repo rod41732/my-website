@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import {Link} from 'gatsby';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
 import './navbar.css'
 
 export default class Navbar extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -15,10 +15,10 @@ export default class Navbar extends React.Component {
 
   handleScroll = () => {
     const { prevScrollpos } = this.state;
-  
+
     const currentScrollPos = window.pageYOffset;
     const visible = prevScrollpos > currentScrollPos;
-  
+
     this.setState({
       prevScrollpos: currentScrollPos,
       visible
@@ -33,12 +33,12 @@ export default class Navbar extends React.Component {
   }
 
   render() {
-    const cls = `nav-height ${this.state.visible ? "": "small"}`
+    const cls = `nav-height ${this.state.visible ? "" : "small"}`
     return (
       <>
-        <div className={`nav-bar clearfix title-font ${cls}`}  id="navbar">
+        <div className={`nav-bar clearfix title-font ${cls}`} id="navbar">
           <Link to="/"><div className={`nav-item logo ${cls}`}>Rod41732</div></Link>
-          <div className={`nav-item nav-button ${cls}`} 
+          <div className={`nav-item nav-button ${cls}`}
             onClick={() => {
               let navClass = document.querySelector("#navbar").classList;
               if (navClass.contains("expanded")) {
@@ -48,22 +48,22 @@ export default class Navbar extends React.Component {
                 navClass.add("expanded");
                 document.querySelector(".nav-button").innerHTML = "X";
               }
-            }}> 
-            ≡ 
+            }}>
+            ≡
           </div>
           <div>
             <div className={`nav-item ${cls}`} onClick={() => {
               let body = document.querySelector("body")
               let oldTheme = body.getAttribute("data-theme")
-              body.setAttribute("data-theme", oldTheme !== "dark"? "dark" : "light")
+              body.setAttribute("data-theme", oldTheme !== "dark" ? "dark" : "light")
             }}>Mode</div>
             <Link to="/about"><div className={`nav-item ${cls}`}>About</div></Link>
-            <Link to="/home"><div className={`nav-item ${cls}`}>Home</div></Link>
-            <Link to="/math"><div className={`nav-item ${cls}`}>Math</div></Link>
-            <Link to="/dev"><div className={`nav-item ${cls}`}>Dev</div></Link>
+            <Link to="/list/all/1"><div className={`nav-item ${cls}`}>Home</div></Link>
+            <Link to="/math"><div className={`nav-item ${cls}`}>----</div></Link>
+            <Link to="/dev"><div className={`nav-item ${cls}`}>----</div></Link>
           </div>
         </div>
-        <div className="nav-height"/>
+        <div className="nav-height" />
       </>
     );
   }

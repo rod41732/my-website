@@ -2,10 +2,11 @@ import React from 'react';
 import Section from '../components/section';
 import Cover from '../components/cover';
 import Card from '../components/card';
-import Layout from '../components/layout';
+import Layout from '../layouts';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCogs, faInfo, faTrophy} from '@fortawesome/free-solid-svg-icons';
 import Timeline from '../components/timeline';
+import Transition from '../components/transition';
 import _ from 'lodash';
 const items = [
     {
