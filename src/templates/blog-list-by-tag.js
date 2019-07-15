@@ -11,7 +11,7 @@ export default ({ data, pageContext }) => {
   const tagDesc = tag !== undefined ? tag.desc : undefined;
   console.log(posts);
   return (
-      <Layout>
+      <>
         <div>
           <Header title={`Blogs in Category "${pageContext.tag}"`} subtitle={tagDesc}></Header>
           {
@@ -30,7 +30,7 @@ export default ({ data, pageContext }) => {
           }
           <Pagenav currentPage={pageContext.currentPage} numOfPages={pageContext.numOfPages} />
         </div>
-      </Layout>
+      </>
   );
 }
 

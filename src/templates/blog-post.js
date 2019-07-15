@@ -11,7 +11,7 @@ export default ({ data }) => {
   const post = data.markdownRemark;
   console.log(data);
   return (
-      <Layout>
+      <>
         <div>
           <Header title={post.frontmatter.title}></Header>
           <Image fluid={data.file.childImageSharp.fluid} />
@@ -21,7 +21,7 @@ export default ({ data }) => {
             }} />
           </Section>
         </div>
-      </Layout>
+      </>
   );
 }
 

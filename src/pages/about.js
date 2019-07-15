@@ -43,9 +43,7 @@ const items = [
 
 export default () => {
     return (
-        <Layout>
-            <AboutMe/>
-        </Layout>
+         <AboutMe/>
     );
 }
 
