@@ -8,7 +8,7 @@ const duration = 200
 
 const defaultStyle = {
   transition: `all ${duration}ms ease-in-out`,
-  transform: "scale3d(0.5, 0.5, 1)",
+  // transform: "scale3d(0.5, 0.5, 1)",
   opacity: 1,
 }
 

@@ -5,6 +5,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
+    if (node.fileAbsolutePath.toLowerCase() === "readme.md") // skip readme file
+      return; 
     if (node.frontmatter.tags == null) {
       console.log(
         `[INFO] ${node.fileAbsolutePath} has no tag, defaulted to "general"`
