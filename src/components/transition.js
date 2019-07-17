@@ -1,34 +1,34 @@
-import React from 'react'
+import React from "react"
 import {
   TransitionGroup,
   Transition as ReactTransition,
-} from 'react-transition-group'
+} from "react-transition-group"
 
 const duration = 200
 
 const defaultStyle = {
   transition: `all ${duration}ms ease-in-out`,
-  transform: 'scale3d(0.5, 0.5, 1)',
+  transform: "scale3d(0.5, 0.5, 1)",
   opacity: 1,
 }
 
 const transitionStyles = {
   entering: {
     opacity: 0.7,
-    transform: 'scale3d(1.05, 1.05, 1)',
+    transform: "scale3d(1.05, 1.05, 1)",
   },
   entered: {
     opacity: 1,
     transition: `transform ${duration / 2}ms ease-in-out`,
-    transform: 'scale3d(1, 1, 1)',
+    transform: "none",
   },
   exiting: {
     opacity: 0.0,
-    transform: 'scale3d(1.05, 1.05, 1)',
+    transform: "scale3d(1.05, 1.05, 1)",
   },
   exited: {
     opacity: 0.0,
-    transform: 'scale3d(0.9, 0.9, 1)',
+    transform: "scale3d(0.9, 0.9, 1)",
   },
   //   exited:  { opacity: 0 },
 }

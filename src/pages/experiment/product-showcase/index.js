@@ -44,7 +44,7 @@ class ShowcaseApp extends React.Component {
     //   .addIndicators() // add indicators (requires plugin)
     //   .addTo(this.controller)
 
-    document.querySelectorAll(".c-scene").forEach((elem) => {
+    document.querySelectorAll(".scene").forEach(elem => {
       new ScrollMagic.Scene({
         triggerElement: elem,
         triggerHook: 0.5,
@@ -53,50 +53,31 @@ class ShowcaseApp extends React.Component {
         .setPin(elem)
         .addIndicators()
         .addTo(this.controller)
-      }
-    )
+    })
   }
 
   render() {
     return (
-      <div className="flex-wrapper">
-        <section id="scene1" className="c-scene">
-          <div className="c-scene__content">
-            <h1 className="c-scene__quote">
-              Our greatest glory is not in never falling, but in rising every
-              time we fall.
-            </h1>
-            <h2 className="c-scene__author">Confucious</h2>
-          </div>
-        </section>
-
-        <section id="scene2" className="c-scene">
-          <div className="c-scene__content">
-            <h1 className="c-scene__quote">
-              Life is a great surprise, I don't see why death should not be an
-              even greater one.
-            </h1>
-            <h2 className="c-scene__author">Vladimir Nabokov</h2>
-          </div>
-        </section>
-
-        <section id="scene3" className="c-scene">
-          <div className="c-scene__content">
-            <h1 className="c-scene__quote">
-              You didn't come in to this world, you came out of it.
-            </h1>
-            <h2 className="c-scene__author">Alan Watts</h2>
-          </div>
-        </section>
-
-        <section id="scene4" className="c-scene">
-          <div className="c-scene__content">
-            <h1 className="c-scene__quote">
-              If opportunity doesn't knock, build a door.
-            </h1>
-            <h2 className="c-scene__author">Milton Berle</h2>
-          </div>
-        </section>
+      <div
+        style={{
+          transform: "none",
+          transition: "all 0s",
+        }}
+      >
+        <div className="wrapper clearfix">
+          {[1, 2, 3, 4, 5].map((idx, _) => {
+            console.log(idx)
+            return (
+              <div className="scene">
+                <div>
+                  <div className="content">
+                    {idx}. Hello this is item {idx}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </div>
     )
   }

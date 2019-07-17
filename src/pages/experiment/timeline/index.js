@@ -1,15 +1,8 @@
-import React from 'react'
-import ScrollMagic from 'scrollmagic';
-
-
+import React from "react"
+import ScrollMagic from "scrollmagic"
 
 const TimelineApp = () => {
-    return (
-        <>
-            
-
-        </>
-    )
+  return <></>
 }
 
 export default TimelineApp
