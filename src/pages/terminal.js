@@ -1,36 +1,36 @@
-import React, { useState, useEffect } from 'react'
-import { get, cd, ls } from '../lib/commands'
-import { resolve } from 'path'
-import './terminal.css'
+import React, { useState, useEffect } from "react"
+import { get, cd, ls } from "../lib/commands"
+import { resolve } from "path"
+import "./terminal.css"
 
 export default () => {
   // constants
   // states
-  const [command, setCommand] = useState('echo hello world ...')
-  const [workDir, setWorkDir] = useState('/')
-  const [lastWorkDirs, setLastWorkDirs] = useState('/')
-  const [inputs, setInputs] = useState(['echo Hello Road!']) // input lines
-  const [outputs, setOutputs] = useState(['Hello Road!']) // output lines
+  const [command, setCommand] = useState("echo hello world ...")
+  const [workDir, setWorkDir] = useState("/")
+  const [lastWorkDirs, setLastWorkDirs] = useState("/")
+  const [inputs, setInputs] = useState(["echo Hello Road!"]) // input lines
+  const [outputs, setOutputs] = useState(["Hello Road!"]) // output lines
 
   // for up/down key
   const [cmdIdx, setCmdIdx] = useState(0)
   const [tabIdx, setTabIdx] = useState(0)
   const [justTabbed, setJustTabbed] = useState(false)
-  const [tabFilter, setTabFilter] = useState('')
+  const [tabFilter, setTabFilter] = useState("")
 
   // const [command, setCommand] = useState("echo hello world ..."); // errors
   const submitCommand = async () => {
     const lastCommand = command
     const oldWorkDir = workDir
-    setCommand('')
-    const tokens = lastCommand.trim().split(' ')
-    console.log('bash: ', tokens)
-    console.log('bash: workdir', workDir)
+    setCommand("")
+    const tokens = lastCommand.trim().split(" ")
+    console.log("bash: ", tokens)
+    console.log("bash: workdir", workDir)
     let result
     try {
       // TODO: spaghetti
       switch (tokens[0]) {
-        case 'help':
+        case "help":
           switch (tokens[1]) {
             case undefined:
               result = `This is fake terminal.
@@ -42,7 +42,7 @@ export default () => {
                         type: help <command> for help about that command.
                         `
               break
-            case 'ls':
+            case "ls":
               result = `Help for ls.
                         ls : list possible sub-API of this (working directory) endpoint.
                         ls <dir>: list possible sub-API of \`dir\` endpoint, it can be relative or absolute.
@@ -53,22 +53,22 @@ export default () => {
                         `
           }
           break
-        case 'echo':
-          result = tokens.slice(1).join(' ')
+        case "echo":
+          result = tokens.slice(1).join(" ")
           break
-        case 'date':
+        case "date":
           result = new Date().toUTCString()
           break
-        case 'ls':
+        case "ls":
           result = await ls({
-            relativePath: tokens[1] || '.',
+            relativePath: tokens[1] || ".",
             workDir,
           })
-          result = result.join('\n')
+          result = result.join("\n")
           break
-        case 'cd':
+        case "cd":
           result = await cd({
-            relativePath: tokens[1] || '/', // home = root lol
+            relativePath: tokens[1] || "/", // home = root lol
             workDir,
           })
           setWorkDir(result)
@@ -90,11 +90,11 @@ export default () => {
       result = err.toString()
     }
     setInputs([...inputs, lastCommand])
-    setOutputs([...outputs, '>>' + result])
+    setOutputs([...outputs, ">>" + result])
     setLastWorkDirs([...lastWorkDirs, oldWorkDir])
     setCmdIdx(0)
     setJustTabbed(false)
-    setTabFilter('')
+    setTabFilter("")
   }
 
   useEffect(() => {
@@ -106,13 +106,13 @@ export default () => {
 
       console.log(e.key)
       switch (e.key.toLowerCase()) {
-        case 'enter':
+        case "enter":
           submitCommand()
           break
-        case 'arrowup':
+        case "arrowup":
           newCmdIdx -= 2
         // intended fall through !
-        case 'arrowdown':
+        case "arrowdown":
           newCmdIdx += 1
           if (newCmdIdx > -1) newCmdIdx = -1
           // TODO: remember currently typed command to
@@ -121,14 +121,14 @@ export default () => {
           const newCommand = inputs[inputs.length + newCmdIdx]
           setCmdIdx(newCmdIdx)
           setCommand(newCommand)
-          const input = document.querySelector('#input')
+          const input = document.querySelector("#input")
           // console.log(newCommand)
           // console.log(newCmdIdx)
           // console.log(inputs.length)
           input.selectionEnd = input.selectionStart = newCommand.length - 1
           // console.log(inputs)
           break
-        case 'tab':
+        case "tab":
           e.preventDefault()
           newJustTabbed = true
           // e.preventDefault()
@@ -147,34 +147,34 @@ export default () => {
           try {
             console.log(tabFilter)
             // TODO: implement tab filter
-            const tokens = command.split(' ')
+            const tokens = command.split(" ")
 
             const choices = await ls({
-              relativePath: '.',
+              relativePath: ".",
               workDir: workDir,
             })
             if (!choices) return
             const newTabIdx = (tabIdx + 1) % choices.length
             tokens[tokens.length - 1] = choices[newTabIdx]
-            setCommand(tokens.join(' '))
+            setCommand(tokens.join(" "))
             setTabIdx(newTabIdx)
           } catch (err) {
             // pass
           }
       }
       if (!newJustTabbed) {
-        const tokens = command.split(' ')
+        const tokens = command.split(" ")
         setTabFilter(tokens[tokens.length - 1])
       }
       setJustTabbed(newJustTabbed)
     }
 
     // attach listener
-    document.getElementById('input').addEventListener('keydown', listener)
+    document.getElementById("input").addEventListener("keydown", listener)
 
     // return function that remove listener
     return () => {
-      document.getElementById('input').removeEventListener('keydown', listener)
+      document.getElementById("input").removeEventListener("keydown", listener)
     }
   })
 
@@ -200,7 +200,7 @@ export default () => {
           })
         })()}
         <div className="term-line term-active">
-          {' '}
+          {" "}
           {/* active line, prompting for command*/}
           <span className="term-prompt">road@doge {workDir} $</span>
           <input
@@ -216,7 +216,7 @@ export default () => {
         <div
           className="spacing"
           style={{
-            height: '40vh',
+            height: "40vh",
           }}
         ></div>
       </div>
@@ -228,7 +228,7 @@ const TermOutput = ({ out }) => {
   if (!out) {
     return <></>
   }
-  const lines = out.split('\n')
+  const lines = out.split("\n")
   return lines.map((text, idx) => (
     <div key={idx} className="term-stdout">
       {text}

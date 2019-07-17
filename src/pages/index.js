@@ -1,7 +1,7 @@
-import React from 'react'
-import Footer from '../components/footer'
-import { graphql, Link } from 'gatsby'
-import './index.css'
+import React from "react"
+import Footer from "../components/footer"
+import { graphql, Link } from "gatsby"
+import "./index.css"
 
 export default ({ data }) => {
   console.log(data)
@@ -29,8 +29,8 @@ export default ({ data }) => {
       <div
         className="title-font"
         style={{
-          border: '0px',
-          margin: '0px',
+          border: "0px",
+          margin: "0px",
         }}
       ></div>
       <div className="home-footer">

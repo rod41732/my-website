@@ -1,5 +1,5 @@
-import React from 'react'
-import './footer.css'
+import React from "react"
+import "./footer.css"
 
 // extraClass is for css styleing, and fixing in consitent animation
 export default function({ extraClass }) {

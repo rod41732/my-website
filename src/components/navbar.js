@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'gatsby'
-import './navbar.css'
+import React, { useState, useEffect } from "react"
+import { Link } from "gatsby"
+import "./navbar.css"
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -25,14 +25,14 @@ export default class Navbar extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener("scroll", this.handleScroll)
   }
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener("scroll", this.handleScroll)
   }
 
   render() {
-    const cls = `nav-height ${this.state.visible ? '' : 'small'}`
+    const cls = `nav-height ${this.state.visible ? "" : "small"}`
     return (
       <>
         <div className={`nav-bar clearfix title-font ${cls}`} id="navbar">
@@ -42,13 +42,13 @@ export default class Navbar extends React.Component {
           <div
             className={`nav-item nav-button ${cls}`}
             onClick={() => {
-              let navClass = document.querySelector('#navbar').classList
-              if (navClass.contains('expanded')) {
-                navClass.remove('expanded')
-                document.querySelector('.nav-button').innerHTML = '≡'
+              let navClass = document.querySelector("#navbar").classList
+              if (navClass.contains("expanded")) {
+                navClass.remove("expanded")
+                document.querySelector(".nav-button").innerHTML = "≡"
               } else {
-                navClass.add('expanded')
-                document.querySelector('.nav-button').innerHTML = 'X'
+                navClass.add("expanded")
+                document.querySelector(".nav-button").innerHTML = "X"
               }
             }}
           >
@@ -58,11 +58,11 @@ export default class Navbar extends React.Component {
             <div
               className={`nav-item ${cls}`}
               onClick={() => {
-                let body = document.querySelector('body')
-                let oldTheme = body.getAttribute('data-theme')
+                let body = document.querySelector("body")
+                let oldTheme = body.getAttribute("data-theme")
                 body.setAttribute(
-                  'data-theme',
-                  oldTheme !== 'dark' ? 'dark' : 'light'
+                  "data-theme",
+                  oldTheme !== "dark" ? "dark" : "light"
                 )
               }}
             >

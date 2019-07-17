@@ -1,13 +1,13 @@
-import React from 'react'
-import './post.css'
-import { Link } from 'gatsby'
+import React from "react"
+import "./post.css"
+import { Link } from "gatsby"
 
 export default ({ tags, title, text, image, date, link }) => {
   return (
     <div className="feed-post">
       <Link to={link}>
         <div className="image-container clearfix">
-          <img alt={title} className="post-img" src={image || 'image.jpg'} />
+          <img alt={title} className="post-img" src={image || "image.jpg"} />
           <div className="post-info">
             {
               // TODO: format date

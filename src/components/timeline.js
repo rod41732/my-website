@@ -1,5 +1,5 @@
-import './timeline.css'
-import React from 'react'
+import "./timeline.css"
+import React from "react"
 
 export default function Timeline({ items }) {
   return (
@@ -8,7 +8,7 @@ export default function Timeline({ items }) {
         {items.map((data, index) => (
           <TimelineBubble body={data.body} title={data.title} key={index} />
         ))}
-        <li key={items.length}></li>{' '}
+        <li key={items.length}></li>{" "}
         {/* extra <li> for line that past end node*/}
       </ul>
     </div>

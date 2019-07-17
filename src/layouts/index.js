@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from '../components/navbar'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
-import Footer from '../components/footer'
-import './layout.css'
-import Transition from '../components/transition'
-import * as _ from 'lodash'
+import React, { useEffect, useState } from "react"
+import Navbar from "../components/navbar"
+import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
+import Footer from "../components/footer"
+import "./layout.css"
+import Transition from "../components/transition"
+import * as _ from "lodash"
 const Layout = ({ children, location }) => {
-  const [loc, setLoc] = useState('')
+  const [loc, setLoc] = useState("")
   const data = useStaticQuery(
     graphql`
       query {
@@ -24,7 +24,10 @@ const Layout = ({ children, location }) => {
   } else if (location.pathname != loc.pathname) {
     setLoc(location)
   }
-  const notHome = !_.some(['/', '/terminal/', '/experiment/product-showcase/'], o => location.pathname == o)
+  const notHome = !_.some(
+    ["/", "/terminal/", "/experiment/product-showcase/"],
+    o => location.pathname == o
+  )
   return (
     <>
       <Helmet>
@@ -35,7 +38,7 @@ const Layout = ({ children, location }) => {
         />
         <link
           href={
-            'https://fonts.googleapis.com/css?family=Kanit:400,500&display=swap'
+            "https://fonts.googleapis.com/css?family=Kanit:400,500&display=swap"
           }
           rel="stylesheet"
         />
@@ -44,7 +47,7 @@ const Layout = ({ children, location }) => {
       <Transition location={loc}>
         <div
           style={{
-            paddingBottom: notHome ? '32px' : '0px',
+            paddingBottom: notHome ? "32px" : "0px",
           }}
         >
           {children}

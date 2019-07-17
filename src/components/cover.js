@@ -1,5 +1,5 @@
-import React from 'react'
-import './cover.css'
+import React from "react"
+import "./cover.css"
 
 export default function Cover() {
   return (
@@ -8,7 +8,7 @@ export default function Cover() {
         className="cover-img"
         alt=""
         style={{
-          backgroundImage: `url(${'image.jpg'})`,
+          backgroundImage: `url(${"image.jpg"})`,
         }}
       />
       <img className="avatar-img" src="doge.png" alt="Profile" />

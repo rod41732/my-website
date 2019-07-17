@@ -1,10 +1,10 @@
-import React from 'react'
-import Layout from '../layouts'
-import Header from '../components/header'
-import Post from '../components/post'
-import { graphql } from 'gatsby'
-import Pagenav from '../components/pagenav'
-import Transition from '../components/transition'
+import React from "react"
+import Layout from "../layouts"
+import Header from "../components/header"
+import Post from "../components/post"
+import { graphql } from "gatsby"
+import Pagenav from "../components/pagenav"
+import Transition from "../components/transition"
 export default ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.nodes
   const tag = data.allTagDescJson.nodes[0]
@@ -22,7 +22,7 @@ export default ({ data, pageContext }) => {
           return (
             <Post
               date={post.frontmatter.date}
-              image={'/' + post.frontmatter.image}
+              image={"/" + post.frontmatter.image}
               key={post.id}
               link={`/article/${post.fields.slug}`}
               tags={post.frontmatter.tags}

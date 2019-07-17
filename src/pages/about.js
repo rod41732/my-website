@@ -1,60 +1,60 @@
-import React from 'react'
-import Section from '../components/section'
-import Cover from '../components/cover'
-import Card from '../components/card'
-import Layout from '../layouts'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCogs, faInfo, faTrophy } from '@fortawesome/free-solid-svg-icons'
-import Timeline from '../components/timeline'
-import Transition from '../components/transition'
-import _ from 'lodash'
+import React from "react"
+import Section from "../components/section"
+import Cover from "../components/cover"
+import Card from "../components/card"
+import Layout from "../layouts"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCogs, faInfo, faTrophy } from "@fortawesome/free-solid-svg-icons"
+import Timeline from "../components/timeline"
+import Transition from "../components/transition"
+import _ from "lodash"
 const items = [
   {
-    title: 'Project 1',
-    body: 'Project 1 description',
+    title: "Project 1",
+    body: "Project 1 description",
   },
   {
-    title: 'Project 2',
-    body: 'Project 2 link',
+    title: "Project 2",
+    body: "Project 2 link",
   },
   {
-    title: 'Contest 1',
-    body: 'TOI 12 ',
+    title: "Contest 1",
+    body: "TOI 12 ",
   },
   {
-    title: 'HelloWorld',
+    title: "HelloWorld",
     body:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.',
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.",
   },
   {
-    title: 'HelloWorld',
+    title: "HelloWorld",
     body:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.',
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.",
   },
   {
-    title: 'HelloWorld',
+    title: "HelloWorld",
     body:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.',
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.",
   },
   {
-    title: 'HelloWorld',
+    title: "HelloWorld",
     body:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.',
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.",
   },
   {
-    title: 'HelloWorld',
+    title: "HelloWorld",
     body:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.',
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.",
   },
   {
-    title: 'HelloWorld',
+    title: "HelloWorld",
     body:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.',
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.",
   },
   {
-    title: 'HelloWorld',
+    title: "HelloWorld",
     body:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.',
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quod a, deleniti laboriosam optio sit voluptates doloremque, architecto accusantium molestiae corporis fugit dolorum explicabo ullam vero dolor nesciunt temporibus minima.",
   },
 ]
 
@@ -76,13 +76,13 @@ function AboutMe() {
       <Section icon={<FontAwesomeIcon icon={faCogs} />} title="My Projects">
         <div
           style={{
-            display: 'block',
+            display: "block",
           }}
         >
           {_.range(5).map(idx => (
             <Card
               key={idx}
-              title={'lorem ipsum title'}
+              title={"lorem ipsum title"}
               body="Culpa veniam sunt aliquip voluptate reprehenderit 
                             incididunt occaecat anim. Laborum tempor sit elit irure 
                             aute sunt in Lorem eu ut voluptate. Reprehenderit quis
