@@ -60,15 +60,48 @@
 }  
 */
 
-.scene {
-  /* position: fixed; */
-  height: 200px;
-  background-color: black;
+.presenter {
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text-scene {
   color: white;
+}
+
+.sm-spacer:nth-child(2n+1) > .text-scene {
+  background-color: green;
+}
+
+.sm-spacer:nth-child(2n) > .text-scene {
+  background-color: blue;
 }
 
 .content {
   /* position: fixed; */
-  display: block;
-  height: 40vh;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  height: 100vh;
+  max-width: 40vw;
+}
+
+.content > .content-text {
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+  transform: translateY(50px);
+}
+
+.content.visible > .content-text {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+
+.content .title {
+  font-size: 2em;
+  font-weight: bold;
 }

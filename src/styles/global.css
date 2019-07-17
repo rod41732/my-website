@@ -47,7 +47,7 @@
 * {
   padding: 0px;
   margin: 0px;
-  transition: all 0.25s;
+  transition: color 0.25s;
 }
 
 .title-font,
