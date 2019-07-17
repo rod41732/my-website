@@ -24,7 +24,7 @@ const Layout = ({ children, location }) => {
   } else if (location.pathname != loc.pathname) {
     setLoc(location)
   }
-  const notHome = !_.some(['/', '/terminal/'], o => location.pathname == o)
+  const notHome = !_.some(['/', '/terminal/', '/experiment/product-showcase/'], o => location.pathname == o)
   return (
     <>
       <Helmet>
