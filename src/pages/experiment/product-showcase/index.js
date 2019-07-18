@@ -6,10 +6,11 @@ import ScrollMagic from "scrollmagic"
 class ShowcaseApp extends React.Component {
   constructor(props) {
     super(props)
-    this.controller = new ScrollMagic.Controller()
+    
   }
 
   componentDidMount() {
+    this.controller = new ScrollMagic.Controller()
     const pinnedImage = document.querySelectorAll(".pin-image")
 
     // pin boxes
@@ -17,23 +18,24 @@ class ShowcaseApp extends React.Component {
       // text-scenes
       new ScrollMagic.Scene({
         triggerElement: elem.parentNode,
-        triggerHook: 0.4,
+        triggerHook: 0.2,
         duration: "100%",
       })
         .setPin(elem, {
           spacerClass: "sm-spacer", // set spacer class for easy reference
+          pushFollowers: false,
         })
         .addIndicators({ name: `pin-box ${idx}` })
         .addTo(this.controller)
 
       new ScrollMagic.Scene({
         triggerElement: elem.parentNode,
-        triggerHook: 0.4,
+        triggerHook: 0.0,
         duration: 0,
         offset: window.innerHeight,
       })
         .setClassToggle(elem, "down")
-        .addIndicators({ name: `stay-down ${idx}` })
+        .addIndicators({ name: `stay-down ${idx} ------------------------` })
         .addTo(this.controller)
     })
 
@@ -91,10 +93,8 @@ class ShowcaseApp extends React.Component {
   render() {
     return (
       <div
-        style={{
-          transform: "none",
-          transition: "all 0s",
-        }}
+        className="wrapper"
+        id="sm-container"
       >
         <div className="wrapper clearfix">
           <div
@@ -116,10 +116,11 @@ class ShowcaseApp extends React.Component {
             return (
               <div className="text-scene">
                 <div className="spacer-40"></div>
+                <div className="pin-image">
+                  <img src="/product-showcase/Doge.png" />
+                </div>
+                {/* <div className="pin-image" > DogeDoge</div> */}
                 <div className="spacer-20">
-                  {" "}
-                  {/* 20  */}
-                  <img className="pin-image" src="/product-showcase/Doge.png" />
                   <div className="content">
                     <h1 className="title-font" style={{ fontSize: "2em" }}>
                       Part {idx}-1 Est veniam

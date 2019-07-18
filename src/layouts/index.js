@@ -25,8 +25,11 @@ const Layout = ({ children, location }) => {
     setLoc(location)
   }
   const notHome = !_.some(
-    ["/", "/terminal/", "/experiment/product-showcase/"],
-    o => location.pathname == o
+    ["^/$", "^/terminal/$", "^/experiment/product-showcase/"],
+    o => {
+      let patt = new RegExp(o);
+      return patt.test(location.pathname)
+    }
   )
   return (
     <>
@@ -43,17 +46,23 @@ const Layout = ({ children, location }) => {
           rel="stylesheet"
         />
       </Helmet>
-      {notHome ? <Navbar /> : <></>}
-      <Transition location={loc}>
-        <div
-          style={{
-            paddingBottom: notHome ? "32px" : "0px",
-          }}
-        >
-          {children}
-        </div>
-      </Transition>
-      {notHome ? <Footer extraClass="footer" /> : <></>}
+      {notHome ? (
+        <>
+          <Navbar />
+          <Transition location={loc}>
+            <div
+              style={{
+                paddingBottom: notHome ? "32px" : "0px",
+              }}
+            >
+              {children}
+            </div>
+          </Transition>
+          <Footer extraClass="footer" />
+        </>
+      ) : (
+        <>{children}</>
+      )}
     </>
   )
 }

@@ -1,3 +1,7 @@
+.wrapper {
+  height: 100%;
+}
+
 .presenter {
   background: red;
   display: flex;
@@ -14,7 +18,7 @@
   flex-direction: column; */
 }
 
-.pin-image {
+.pin-image > img {
   /* position: absolute; */
   height: 20vh;
 }
@@ -80,10 +84,10 @@
   /* float: right; */
 }
 
-.down {
+/* .down {
   position: absolute;
-  top: calc(100vh + 4px) !important; /* fucking 4 pixel wot */
-}
+  top: calc(100vh + 4px) !important;
+} */
 
 .text-box {
   max-width: 40vw;
