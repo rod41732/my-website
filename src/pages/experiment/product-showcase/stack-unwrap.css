@@ -1,0 +1,55 @@
+.stacked-container {
+  min-height: 100vh;
+  position: relative;
+  display: block;
+}
+
+.stacked {
+  transition: transform 0.25s;
+  position: absolute;
+  display: block;
+  left: 40vw;
+  top: 40vh;
+  width: 20vw;
+  height: 20vh;
+}
+
+.full-height {
+  background-color: green;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  /* float: right; */
+}
+
+.full-height * {
+  /* display: flex; */
+  display: block;
+}
+
+
+.item-0 {
+  background-color: magenta;
+}
+
+.item-1 {
+  background-color: red;
+}
+
+.item-2 {
+  background-color: green;
+}
+
+.item-3 {
+  background-color: blue;
+}
+
+.item-4 {
+  background-color: yellow;
+}
+
+.go-away {
+  transform: translateY(-999px);
+}
