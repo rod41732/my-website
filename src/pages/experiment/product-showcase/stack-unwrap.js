@@ -4,6 +4,14 @@ import ReactDOM from "react-dom"
 import "./style.css"
 import "./stack-unwrap.css"
 import ScrollMagic from "scrollmagic"
+
+// plugins for scrollmagic
+const debug = {
+  addIndicators: require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators')
+}
+const animation = {
+  gsap: require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap')
+}
 const _ = require('lodash')
 
 class ShowcaseApp extends React.Component {

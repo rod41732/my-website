@@ -1,8 +1,14 @@
 import React from "react"
 import ReactDOM from "react-dom"
-
 import "./style.css"
 import ScrollMagic from "scrollmagic"
+const debug = {
+  addIndicators: require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators')
+}
+const animation = {
+  gsap: require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap')
+}
+
 class ShowcaseApp extends React.Component {
   constructor(props) {
     super(props)

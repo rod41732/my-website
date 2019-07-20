@@ -24,7 +24,7 @@ const Layout = ({ children, location }) => {
   } else if (location.pathname != loc.pathname) {
     setLoc(location)
   }
-  const notHome = !_.some(
+  const notHome = !!location && !_.some(
     ["^/$", "^/terminal/$", "^/experiment/product-showcase/"],
     o => {
       let patt = new RegExp(o);
