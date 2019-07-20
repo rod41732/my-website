@@ -1,4 +1,6 @@
 const { createFilePath } = require("gatsby-source-filesystem")
+
+
 const path = require("path")
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -25,8 +27,17 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark (
+        filter: {
+          frontmatter: {
+            image:{
+              ne: null
+            }
+          }
+        }
+      ){
         nodes {
+          fileAbsolutePath
           fields {
             slug
           }
@@ -39,7 +50,9 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(({ data }) => {
     // list of articles (`MarkdownRemark`s)
+    console.log(data.allMarkdownRemark.nodes.map((node) => node.fileAbsolutePath))
     const articles = data.allMarkdownRemark.nodes
+    console.log("articles = ",articles.map((node) => node.fileAbsolutePath))
     const numOfMarkdown = articles.length
     console.log(`================= there're ${numOfMarkdown} markdowns!`)
 
@@ -89,3 +102,4 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 }
+

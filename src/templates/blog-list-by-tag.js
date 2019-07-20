@@ -41,31 +41,40 @@ export default ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-  query getMarkdownByTag($tag: String) {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___title], order: [DESC] }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-    ) {
-      nodes {
-        id
-        fileAbsolutePath
-        frontmatter {
-          title
-          date
-          image
-          tags
+    query getMarkdownByTag($tag: String) {
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___title], order: [DESC] }
+        filter: { 
+          frontmatter: { 
+            tags: {
+              in: [$tag] 
+            },
+            image:{
+              ne: null
+            }
+          }
         }
-        excerpt
-        fields {
-          slug
+      ) {
+        nodes {
+          id
+          fileAbsolutePath
+          frontmatter {
+            title
+            date
+            image
+            tags
+          }
+          excerpt
+          fields {
+            slug
+          }
+        }
+      }
+      allTagDescJson(filter: { name: { eq: $tag } }) {
+        nodes {
+          name
+          desc
         }
       }
     }
-    allTagDescJson(filter: { name: { eq: $tag } }) {
-      nodes {
-        name
-        desc
-      }
-    }
-  }
 `

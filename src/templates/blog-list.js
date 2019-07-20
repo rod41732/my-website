@@ -33,26 +33,33 @@ export default ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-  query getSliceOfMarkdown($skip: Int!) {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___title], order: [DESC] }
-      skip: $skip
-      limit: 5
-    ) {
-      nodes {
-        id
-        fileAbsolutePath
-        frontmatter {
-          title
-          date
-          image
-          tags
-        }
-        excerpt
-        fields {
-          slug
+query getSliceOfMarkdown($skip: Int!) {
+  allMarkdownRemark(
+    sort: { fields: [frontmatter___title], order: [DESC] }
+    filter: {
+      frontmatter: {
+        image: {
+          ne:null
         }
       }
     }
+    skip: $skip
+    limit: 5
+  ) {
+    nodes {
+      id
+      fileAbsolutePath
+      frontmatter {
+        title
+        date
+        image
+        tags
+      }
+      excerpt
+      fields {
+        slug
+      }
+    }
   }
+}
 `
