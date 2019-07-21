@@ -2,13 +2,16 @@ import React from "react"
 import "./index.css"
 
 import ScrollMagic from "scrollmagic"
-import { TweenMax } from "gsap"
+import { TweenMax, TweenLite, Ease, Power4, Power2, TimelineMax } from "gsap"
+
 const debug = {
   addIndicators: require("scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators"),
 }
 const animation = {
   gsap: require("scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap"),
 }
+
+const plugins = [TweenMax, animation, debug]
 
 export default class TheWorld extends React.Component {
   constructor(props) {
@@ -17,53 +20,105 @@ export default class TheWorld extends React.Component {
 
   componentDidMount() {
     this.controller = new ScrollMagic.Controller()
-    // const effect = TweenMax.to()
+    
+    const tl = new TimelineMax()
+    
+    // wave
+    tl.to(
+      ".wave",
+      0.1,
+      {
+        height: "3840px",
+        width: "3840px",
+        top: "-1758px",
+        left: "-768px",
+      },
+      0
+    )
+    
+    // image zoom out
+    tl.fromTo(
+      ".image",
+      0.1,
+      {
+        scaleX: 2,
+        scaleY: 2,
+      },
+      {
+        scaleX: 1.2,
+        scaleY: 1.2,
+      },
+      0
+    )
 
-    document.querySelectorAll(".wave").forEach(elem => {
-      console.log("wave", elem)
-      new ScrollMagic.Scene({
-        triggerElement: "#root",
-        triggerHook: 0,
-        duration: "200%",
-      })
-        .setTween(elem, {
-          height: "3840px",
-          width: "3840px",
-          top: "-1758px",
-          left: "-768px",
-          color: "#00ff00",
-        })
-        .addIndicators()
-        .addTo(this.controller)
+    // image jitter
+    tl.to(
+      ".image",
+      0.4,
+      {
+        scaleX: 1.12,
+        scaleY: 1.12,
+        repeat: 4,
+        yoyo: true,
+        ease: Power2.easeInOut,
+      },
+      0.1
+    )
+
+    // Scale Back
+    tl.to(
+      ".image",
+      0.4,
+      {
+        scaleX: 1.00,
+        scaleY: 1.00,
+        repeat: 4,
+        yoyo: true,
+        ease: Power2.easeInOut,
+      },
+      0.5
+    )
+
+    // no wave
+    tl.to(
+      ".wave",
+      0.1,
+      {
+        height: "0px",
+        width: "0px",
+        top: "217px",
+        left: "1020px",
+      },
+      // 0.9
+    )
+
+
+
+
+    // change Inverted-ness  of wave
+    const colors = [
+      /*"violet", "indigo", "blue", "green", "yellow", "orange", "red",*/ "white",
+    ]
+
+    // the timeline animation
+    const DURATION = "800%";
+    new ScrollMagic.Scene({
+      triggerElement: "#root",
+      triggerHook: 0,
+      duration: DURATION,
     })
-
-    document.querySelectorAll(".image").forEach(elem => {
-      console.log("image", elem)
+      .setTween(tl)
+      .addIndicators()
+      .addTo(this.controller)
+    
+    // pin image 
+    document.querySelectorAll(".image").forEach((elem) => {
       new ScrollMagic.Scene({
         triggerElement: "#root",
         triggerHook: 0,
-        duration: "200%",
+        duration: DURATION,
       })
         .setPin(elem)
-        .addIndicators()
-        .addTo(this.controller)
-
-      const tw = TweenMax.to(elem, 1, {
-        ease: CustomEase.create(
-          "custom",
-          "M0,0 C0.266,0.412 0.128,0.803 0.224,1.056 0.239,1.095 0.318,0.979 0.372,0.962 0.408,0.95 0.437,1.031 0.488,1.034 0.532,1.036 0.541,0.977 0.584,0.964 0.614,0.955 0.675,1.031 0.71,1.036 0.731,1.038 0.786,0.974 0.808,0.972 0.838,0.968 0.983,1 1,1"
-        ),
-        scaleX: 1.15,
-        scaleY: 1.15,
-        yoyo: true,
-      })
-
-      new ScrollMagic.Scene({
-        triggerElement: "#root",
-        triggerHook: 0,
-        duration: "200%",
-      })
-        .setTween(tw)
         .addIndicators()
         .addTo(this.controller)
     })
@@ -78,7 +133,6 @@ export default class TheWorld extends React.Component {
             <img src="/theworld/zawarudo.png" />
           </div>
           <div className="wave"></div>
-          <div className="wave smaller"></div>
           {/* <img className="image" src="/theworld/zawarudo.png" /> */}
         </div>
       </div>

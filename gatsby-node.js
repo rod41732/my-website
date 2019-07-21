@@ -128,6 +128,10 @@ exports.onCreateWebpackConfig = ({
             {
               test: /animation.gsap/,
               use: loaders.null(),
+            },
+            {
+              test: /TweenMax/,
+              use: loaders.null(),
             }
           ]
         : []
