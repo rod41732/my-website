@@ -1,0 +1,31 @@
+.container {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+.image {
+    height: 100vh;
+}
+
+.darken {
+}
+
+.smaller {
+    transform: scale3d(0, 0, 1);
+}
+
+.placeholder {
+    width: 100vw;
+    height: 100vh;
+}
+
+.wave {
+    position: fixed;
+    top: 217px;
+    left: 1020px;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: white; 
+    mix-blend-mode: difference;
+}
