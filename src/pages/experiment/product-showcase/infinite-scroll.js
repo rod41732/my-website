@@ -30,15 +30,22 @@ class ShowcaseApp extends React.Component {
     })
     scene.addIndicators().addTo(this.controller)
     scene.on("start", () => {
-      this.setState({
-        loading: true,
-      })
-      setTimeout(() => {
+      if (!this.state.loading) {
         this.setState({
-          loading: false,
-          data: [...this.state.data, 10, 20, 30, 40],
+          loading: true,
         })
-      }, 400)
+        setTimeout(() => {
+          this.setState({
+            data: [...this.state.data, 10, 20, 30, 40],
+          })
+        }, 1000)
+        setTimeout(() => {
+          this.setState({
+            loading: false,
+          })
+        }, 1500) // delay more for 'unlocking'
+
+      }
     })
   }
 
