@@ -1,5 +1,6 @@
 ---
 title: "dynamic wallaper with crontab"
+subtitle: "Make you own Dynamic Wallpaper just like macOS"
 date: "2019-07-15"
 image: "doge.png"
 tags: ["Scripting"]

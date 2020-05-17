@@ -77,3 +77,66 @@
   left: 0;
   color: rgba(255, 255, 255, 0.6);
 }
+
+body {
+  font-size: 16px;
+}
+
+code {
+  color: #c52727;
+  background-color: #eee;
+  border-radius: 4px;
+  /* border: 2px solid grey; */
+  padding: 3px 6px;
+}
+
+
+code {
+  background-color: #eee;
+  word-wrap: break-word;
+}
+pre > code {
+  color: green !important;
+  background-color: transparent;
+  /* word-wrap: break-word; */
+}
+
+
+/*
+  for different font blog page
+*/
+@font-face {
+  unicode-range: U+0E00-0E7F;
+  font-family: "ThaiFont";
+  src: url(/fonts/Krub-Light.ttf);
+}
+
+@font-face {
+  font-family: "ThaiFontFull";
+  src: url(/fonts/Krub-Light.ttf);
+}
+
+
+@font-face {
+  unicode-range: U+0000-007F;
+  src: url(/fonts/DMMono-Medium.ttf);
+  font-family: "EngFont";
+}
+
+@font-face {
+  src: url(/fonts/Kanit-Medium.ttf);
+  font-family: "Kanit";
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Kanit";
+}
+
+
+.dynamic {
+  font-family: ThaiFont, EngFont;
+}
+
+.thai-font {
+  font-familty: "ThaiFontFull";
+}

@@ -13,7 +13,7 @@ export default ({ data }) => {
   return (
     <>
       <div>
-        <Header title={post.frontmatter.title}></Header>
+        <Header title={post.frontmatter.title} subtitle={post.frontmatter.subtitle || "No subtitle"}></Header>
         <Image fluid={data.file.childImageSharp.fluid} />
         <Section>
           <div
@@ -33,6 +33,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        subtitle
       }
     }
     file(relativePath: { eq: $imgSrc }) {

@@ -23,6 +23,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
+// logic for generating all static pages
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
